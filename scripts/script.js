@@ -23,18 +23,16 @@ const spinApp = {};
 
 // Ajax calls for the different Categories 
 spinApp.celebs = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=26&difficulty=easy&type=multiple",
+    url: "https://opentdb.com/api.php?amount=1&category=26&difficulty=easy&type=boolean",
     type: 'GET',
     dataType: 'json',
 }).then(function(result){
-    // spinApp.celebs = result.results[0].category;
-    // console.log(result.results[0])
     return result.results[0];
 })
 
 
 spinApp.sport = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=multiple",
+    url: "https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=boolean",
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
@@ -42,16 +40,16 @@ spinApp.sport = $.ajax({
 })
 
 spinApp.geo = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=22&difficulty=easy&type=multiple",
+    url: "https://opentdb.com/api.php?amount=1&category=22&difficulty=easy&type=boolean",
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
-    console.log(result)
+    // console.log(result)
     return result.results[0];
 })
 
 spinApp.animals = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=27&difficulty=easy&type=multiple",
+    url: "https://opentdb.com/api.php?amount=1&category=27&difficulty=easy&type=boolean",
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
@@ -59,7 +57,7 @@ spinApp.animals = $.ajax({
 })
 
 spinApp.science = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=17&difficulty=easy&type=multiple",
+    url: "https://opentdb.com/api.php?amount=1&category=17&difficulty=easy&type=boolean",
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
@@ -67,7 +65,7 @@ spinApp.science = $.ajax({
 })
 
 spinApp.tv = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=14&difficulty=easy&type=multiple",
+    url: "https://opentdb.com/api.php?amount=1&category=14&difficulty=easy&type=boolean",
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
@@ -75,7 +73,7 @@ spinApp.tv = $.ajax({
 })
 
 spinApp.music = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=12&difficulty=easy&type=multiple",
+    url: "https://opentdb.com/api.php?amount=1&category=12&difficulty=easy&type=boolean",
     type: 'GET',
     dataType: 'json',
 }).then((result) => {
@@ -84,14 +82,12 @@ spinApp.music = $.ajax({
 
 
 spinApp.film = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=multiple",
+    url: "https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=boolean",
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
     return result.results[0];
 })
-
-
 
 
 // Array of categories for randomizing (promises)
@@ -101,19 +97,39 @@ spinApp.categories = [spinApp.animals, spinApp.celebs, spinApp.geo, spinApp.musi
 spinApp.randomCategory = function (array) {
     // console.log("pls work");
     const randomNumber = Math.floor(Math.random() * this.categories.length);
-    console.log(randomNumber, array[randomNumber])
+    // console.log(randomNumber, array[randomNumber])
     return array[randomNumber];
 };
 
-// console.log(spinApp.randomCategory(spinApp.categories));
+spinApp.buttonClick = function (){
+    // why wont button click work in here? motherfucker
+}
 
-$(function(){
-    // spinApp.randomCategory(spinApp.categories);
-    // these are both spreads
-    $.when(...spinApp.categories).then((...res) =>{
-        spinApp.categories = res;
-        // console.log(res, spinApp.categories);
-        spinApp.randomCategory(spinApp.categories);
-    })
+$("button").on("click", function () {
+    console.log("clicked");
+    console.log(randomResult.category, randomResult.question);
+
+    $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>`);
 });
 
+$(function(){
+    // these ... are both spreads
+    $.when(...spinApp.categories).then((...res) =>{
+        spinApp.categories = res;
+        randomResult = spinApp.randomCategory(spinApp.categories);
+        // console.log(res, spinApp.categories);
+    });
+
+});
+
+
+// issues on issues on issues
+
+//  will need to randomise the location of the answer so it doesn't always display the same
+// question only updates when page is refreshed?? Other data need to stay- might need to use firebase to save user data and then force a refresh after each spin
+// he.js decoder needs to run on question??
+
+
+// for true or false we need 
+// display radio buttons with value of true or false to screen. 
+// check value of radio with if else statement
