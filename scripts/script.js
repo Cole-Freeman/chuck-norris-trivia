@@ -111,9 +111,32 @@ $("button").on("click", function () {
 
     $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
     <label for="true">True</label>
-    <input type="radio" name="answers" id="true" value="true">
+    <input type="radio" name="answers" id="true" value="True">
     <label for="false">False</label>
-    <input type="radio" name="answers" id="false" value="false">`);
+    <input type="radio" name="answers" id="false" value="False">
+    <input type="submit" class="submit" value="Submit!" id="submit-button">
+    <label for="submit-button" class="visually-hidden">Click to submit answer</label>`);
+
+
+});
+
+$("input").on("submit", function (event) {
+    event.preventDefault();
+    const userAnswer = $(`input[name=answers]:checked`).val();
+
+    const ajaxAnswer = randomResult.correct_answer;
+
+    console.log(ajaxAnswer);
+
+    // console.log(userAnswer);
+
+    if (ajaxAnswer === userAnswer) {
+        console.log('you win');
+
+    } else if (ajaxAnswer !== userAnswer) {
+     console.log('you suck!')
+    } 
+
 });
 
 $(function(){
