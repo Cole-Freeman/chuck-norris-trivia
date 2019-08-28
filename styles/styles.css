@@ -192,3 +192,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+button {
+  height: 45vh;
+  width: 45%;
+  background: 0;
+  border: none;
+}
