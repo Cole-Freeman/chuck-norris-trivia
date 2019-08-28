@@ -101,43 +101,48 @@ spinApp.randomCategory = function (array) {
     return array[randomNumber];
 };
 
-spinApp.buttonClick = function (){
+spinApp.spinnerClick = function (){
     // why wont button click work in here? motherfucker
+    $("button").on("click", function () {
+        console.log("clicked");
+        // console.log(randomResult.category, randomResult.question);
+    
+        $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
+        <label for="true">True</label>
+        <input type="radio" name="answers" id="true" value="True">
+    
+        <label for="false">False</label>
+        <input type="radio" name="answers" id="false" value="False">
+    
+        <input type="submit" class="submit" value="Submit!" id="submit-button">
+        <label for="submit-button" class="visually-hidden">Click to submit answer</label>`);
+    
+    });
 }
 
-$("button").on("click", function () {
-    console.log("clicked");
-    // console.log(randomResult.category, randomResult.question);
+spinApp.submitButton = function (){
 
-    $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
-    <label for="true">True</label>
-    <input type="radio" name="answers" id="true" value="True">
-    <label for="false">False</label>
-    <input type="radio" name="answers" id="false" value="False">
-    <input type="submit" class="submit" value="Submit!" id="submit-button">
-    <label for="submit-button" class="visually-hidden">Click to submit answer</label>`);
+    $(".submit").on("submit", function (event) {
+        event.preventDefault();
+    
+        const userAnswer = $(`input[name=answers]:checked`).val();
+    
+        const ajaxAnswer = randomResult.correct_answer;
+    
+        console.log(ajaxAnswer);
+    
+        // console.log(userAnswer);
+    
+        if (ajaxAnswer === userAnswer) {
+            console.log('you win');
+    
+        } else if (ajaxAnswer !== userAnswer) {
+         console.log('you suck!')
+        } 
+    
+    });
+}
 
-
-});
-
-$("input").on("submit", function (event) {
-    event.preventDefault();
-    const userAnswer = $(`input[name=answers]:checked`).val();
-
-    const ajaxAnswer = randomResult.correct_answer;
-
-    console.log(ajaxAnswer);
-
-    // console.log(userAnswer);
-
-    if (ajaxAnswer === userAnswer) {
-        console.log('you win');
-
-    } else if (ajaxAnswer !== userAnswer) {
-     console.log('you suck!')
-    } 
-
-});
 
 $(function(){
     // these ... are both spreads
@@ -147,12 +152,17 @@ $(function(){
         // console.log(res, spinApp.categories);
     });
 
+    spinApp.spinnerClick();
+    spinApp.submitButton();
+
 });
 
 
 // issues on issues on issues
 
 //  will need to randomise the location of the answer so it doesn't always display the same
+
+// push all possible answers into array and randomise from array. loop to display.
 // question only updates when page is refreshed?? Other data need to stay- might need to use firebase to save user data and then force a refresh after each spin
 // he.js decoder needs to run on question??
 
@@ -160,3 +170,4 @@ $(function(){
 // for true or false we need 
 // display radio buttons with value of true or false to screen. 
 // check value of radio with if else statement
+// why is form submitting???
