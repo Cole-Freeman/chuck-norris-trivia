@@ -107,9 +107,13 @@ spinApp.buttonClick = function (){
 
 $("button").on("click", function () {
     console.log("clicked");
-    console.log(randomResult.category, randomResult.question);
+    // console.log(randomResult.category, randomResult.question);
 
-    $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>`);
+    $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
+    <label for="true">True</label>
+    <input type="radio" name="answers" id="true" value="true">
+    <label for="false">False</label>
+    <input type="radio" name="answers" id="false" value="false">`);
 });
 
 $(function(){
