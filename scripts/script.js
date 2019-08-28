@@ -20,20 +20,25 @@
   
 const spinApp = {};
 
+
+// Ajax calls for the different Categories 
 spinApp.celebs = $.ajax({
     url: "https://opentdb.com/api.php?amount=1&category=26&difficulty=easy&type=multiple",
     type: 'GET',
     dataType: 'json',
 }).then(function(result){
-    // console.log(result);
+    // spinApp.celebs = result.results[0].category;
+    // console.log(result.results[0])
+    return result.results[0];
 })
+
 
 spinApp.sport = $.ajax({
     url: "https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=multiple",
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
-    // console.log(result);
+    return result.results[0];
 })
 
 spinApp.geo = $.ajax({
@@ -41,7 +46,8 @@ spinApp.geo = $.ajax({
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
-    // console.log(result);
+    console.log(result)
+    return result.results[0];
 })
 
 spinApp.animals = $.ajax({
@@ -49,7 +55,7 @@ spinApp.animals = $.ajax({
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
-    // console.log(result);
+    return result.results[0];
 })
 
 spinApp.science = $.ajax({
@@ -57,7 +63,7 @@ spinApp.science = $.ajax({
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
-    // console.log(result);
+    return result.results[0];
 })
 
 spinApp.tv = $.ajax({
@@ -65,15 +71,15 @@ spinApp.tv = $.ajax({
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
-    // console.log(result);
+    return result.results[0];
 })
 
 spinApp.music = $.ajax({
     url: "https://opentdb.com/api.php?amount=1&category=12&difficulty=easy&type=multiple",
     type: 'GET',
     dataType: 'json',
-}).then(function (result) {
-    // console.log(result);
+}).then((result) => {
+    return result.results[0];
 })
 
 
@@ -82,20 +88,32 @@ spinApp.film = $.ajax({
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
-    console.log(result);
+    return result.results[0];
 })
 
+
+
+
+// Array of categories for randomizing (promises)
 spinApp.categories = [spinApp.animals, spinApp.celebs, spinApp.geo, spinApp.music, spinApp.science, spinApp.sport, spinApp.tv, spinApp.film];
 
-console.log(spinApp.categories);
-
+// Randomize function
 spinApp.randomCategory = function (array) {
-    console.log("pls work");
+    // console.log("pls work");
     const randomNumber = Math.floor(Math.random() * this.categories.length);
+    console.log(randomNumber, array[randomNumber])
     return array[randomNumber];
 };
 
+// console.log(spinApp.randomCategory(spinApp.categories));
+
 $(function(){
-    spinApp.randomCategory(spinApp.categories);
+    // spinApp.randomCategory(spinApp.categories);
+    // these are both spreads
+    $.when(...spinApp.categories).then((...res) =>{
+        spinApp.categories = res;
+        // console.log(res, spinApp.categories);
+        spinApp.randomCategory(spinApp.categories);
+    })
 });
 
