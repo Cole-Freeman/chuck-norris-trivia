@@ -82,7 +82,7 @@ spinApp.film = $.ajax({
     type: 'GET',
     dataType: 'json',
 }).then(function (result) {
-    // console.log(result);
+    console.log(result);
 })
 
 spinApp.categories = [spinApp.animals, spinApp.celebs, spinApp.geo, spinApp.music, spinApp.science, spinApp.sport, spinApp.tv, spinApp.film];
@@ -90,13 +90,12 @@ spinApp.categories = [spinApp.animals, spinApp.celebs, spinApp.geo, spinApp.musi
 console.log(spinApp.categories);
 
 spinApp.randomCategory = function (array) {
+    console.log("pls work");
     const randomNumber = Math.floor(Math.random() * this.categories.length);
     return array[randomNumber];
-}
-
+};
 
 $(function(){
-    randomCategory(spinApp.categories);
+    spinApp.randomCategory(spinApp.categories);
 });
-
 
