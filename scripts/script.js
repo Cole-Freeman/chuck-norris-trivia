@@ -158,7 +158,8 @@ spinApp.spinnerClick = function (){
             })
 
         } else {
-            alert('jabrone');
+            // switch this to sweet alert
+            if(!alert('Alert For your User!')){window.location.reload();}
         }
        
 
