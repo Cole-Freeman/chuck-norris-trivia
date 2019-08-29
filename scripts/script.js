@@ -21,73 +21,73 @@
 const spinApp = {};
 
 
-// Ajax calls for the different Categories 
-spinApp.celebs = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=26&difficulty=easy&type=boolean",
-    type: 'GET',
-    dataType: 'json',
-}).then(function(result){
-    return result.results[0];
-})
+// // Ajax calls for the different Categories 
+// spinApp.celebs = $.ajax({
+//     url: "https://opentdb.com/api.php?amount=1&category=26&difficulty=easy&type=boolean",
+//     type: 'GET',
+//     dataType: 'json',
+// }).then(function(result){
+//     return result.results[0];
+// })
 
 
-spinApp.sport = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=boolean",
-    type: 'GET',
-    dataType: 'json',
-}).then(function (result) {
-    return result.results[0];
-})
+// spinApp.sport = $.ajax({
+//     url: "https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=boolean",
+//     type: 'GET',
+//     dataType: 'json',
+// }).then(function (result) {
+//     return result.results[0];
+// })
 
-spinApp.geo = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=22&difficulty=easy&type=boolean",
-    type: 'GET',
-    dataType: 'json',
-}).then(function (result) {
-    // console.log(result)
-    return result.results[0];
-})
+// spinApp.geo = $.ajax({
+//     url: "https://opentdb.com/api.php?amount=1&category=22&difficulty=easy&type=boolean",
+//     type: 'GET',
+//     dataType: 'json',
+// }).then(function (result) {
+//     // console.log(result)
+//     return result.results[0];
+// })
 
-spinApp.animals = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=27&difficulty=easy&type=boolean",
-    type: 'GET',
-    dataType: 'json',
-}).then(function (result) {
-    return result.results[0];
-})
+// spinApp.animals = $.ajax({
+//     url: "https://opentdb.com/api.php?amount=1&category=27&difficulty=easy&type=boolean",
+//     type: 'GET',
+//     dataType: 'json',
+// }).then(function (result) {
+//     return result.results[0];
+// })
 
-spinApp.science = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=17&difficulty=easy&type=boolean",
-    type: 'GET',
-    dataType: 'json',
-}).then(function (result) {
-    return result.results[0];
-})
+// spinApp.science = $.ajax({
+//     url: "https://opentdb.com/api.php?amount=1&category=17&difficulty=easy&type=boolean",
+//     type: 'GET',
+//     dataType: 'json',
+// }).then(function (result) {
+//     return result.results[0];
+// })
 
-spinApp.tv = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=14&difficulty=easy&type=boolean",
-    type: 'GET',
-    dataType: 'json',
-}).then(function (result) {
-    return result.results[0];
-})
+// spinApp.tv = $.ajax({
+//     url: "https://opentdb.com/api.php?amount=1&category=14&difficulty=easy&type=boolean",
+//     type: 'GET',
+//     dataType: 'json',
+// }).then(function (result) {
+//     return result.results[0];
+// })
 
-spinApp.music = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=12&difficulty=easy&type=boolean",
-    type: 'GET',
-    dataType: 'json',
-}).then((result) => {
-    return result.results[0];
-})
+// spinApp.music = $.ajax({
+//     url: "https://opentdb.com/api.php?amount=1&category=12&difficulty=easy&type=boolean",
+//     type: 'GET',
+//     dataType: 'json',
+// }).then((result) => {
+//     return result.results[0];
+// })
 
 
-spinApp.film = $.ajax({
-    url: "https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=boolean",
-    type: 'GET',
-    dataType: 'json',
-}).then(function (result) {
-    return result.results[0];
-})
+// spinApp.film = $.ajax({
+//     url: "https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=boolean",
+//     type: 'GET',
+//     dataType: 'json',
+// }).then(function (result) {
+//     return result.results[0];
+// })
 
 spinApp.singleAjaxCall = function(categoryId){
    return $.ajax({
@@ -106,7 +106,7 @@ spinApp.singleAjaxCall = function(categoryId){
 }
 
 
-// Array of categories for randomizing (promises)
+// // Array of categories for randomizing (promises)
 spinApp.categories = [spinApp.animals, spinApp.celebs, spinApp.geo, spinApp.music, spinApp.science, spinApp.sport, spinApp.tv, spinApp.film];
 
 spinApp.cat = [ 
@@ -121,9 +121,7 @@ spinApp.cat = [
     ];
 // Randomize function
 spinApp.randomCategory = function (array) {
-    // console.log("pls work");
-    const randomNumber = Math.floor(Math.random() * this.categories.length);
-    // console.log(randomNumber, array[randomNumber])
+    const randomNumber = Math.floor(Math.random() * this.cat.length);
     return array[randomNumber];
 };
 
@@ -131,15 +129,14 @@ spinApp.spinnerClick = function (){
 
     $("button").on("click", function () {
         console.log("clicked");
-        // console.log(randomResult.category, randomResult.question);
+       
         const selectedCat = spinApp.randomCategory(spinApp.cat);
-  
-        // spinApp.singleAjaxCall(selectedCat.id);
-        const test = spinApp.singleAjaxCall(selectedCat.id);
-        // console.log(spinApp.singleAjaxCall(selectedCat.id));
-        $.when(test).then((res) => {
-            console.log(res);
+        const success = spinApp.singleAjaxCall(selectedCat.id);
+    
+        $.when(success).then((answerObject) => {
+            console.log(answerObject);
         })
+
         // setTimeout(function () { console.log(spinApp.singleAjaxCall(17)); }, 1000);
 
         // $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
