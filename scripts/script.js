@@ -129,30 +129,41 @@ spinApp.spinnerClick = function (){
 
     $("button").on("click", function () {
         console.log("clicked");
+
+        const turnsLeft = $(".turns").text();
+        console.log (turnsLeft);
+
+        $(".quiz").html(``);
+
+        if (turnsLeft > 0) {
+
+            const selectedCat = spinApp.randomCategory(spinApp.cat);
+            const success = spinApp.singleAjaxCall(selectedCat.id);
+        
+            $.when(success).then((answerObject) => {
+                console.log(answerObject);
+                $(".quiz").html(`<h2>${answerObject.category}</h2><p>${answerObject.question}</p>
+                <form action="#">
+                    <label for="true">True</label>
+                    <input type="radio" name="answers" id="true" value="True">
+                
+                    <label for="false">False</label>
+                    <input type="radio" name="answers" id="false" value="False">
+                
+                    <input type="submit" class="submit" value="Submit!" id="submit-button">
+                    <label for="submit-button" class="visually-hidden">Click to submit answer</label>
+                </form>`);
+        
+                $('.turns').text(Number($(".turns").text()) - 1);
+            })
+
+        } else {
+            alert('jabrone');
+        }
        
-        const selectedCat = spinApp.randomCategory(spinApp.cat);
-        const success = spinApp.singleAjaxCall(selectedCat.id);
-    
-        $.when(success).then((answerObject) => {
-            console.log(answerObject);
-        })
 
-        // setTimeout(function () { console.log(spinApp.singleAjaxCall(17)); }, 1000);
 
-        // $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
-        // <form action="#">
-        //     <label for="true">True</label>
-        //     <input type="radio" name="answers" id="true" value="True">
-        
-        //     <label for="false">False</label>
-        //     <input type="radio" name="answers" id="false" value="False">
-        
-        //     <input type="submit" class="submit" value="Submit!" id="submit-button">
-        //     <label for="submit-button" class="visually-hidden">Click to submit answer</label>
-        // </form>`);
-
-        // $('.turns').text(Number($(".turns").text()) - 1);
-
+        // setTimeout(function () { console.log(spinApp.singleAjaxCall(17)); }, 1000)
     
     });
 }
