@@ -105,71 +105,75 @@ spinApp.spinnerClick = function (){
     // why wont button click work in here? motherfucker
     $("button").on("click", function () {
         console.log("clicked");
-        // console.log(randomResult.category, randomResult.question);
+        console.log(randomResult.category, randomResult.question);
     
         $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
-        <label for="true">True</label>
-        <input type="radio" name="answers" id="true" value="True">
-    
-        <label for="false">False</label>
-        <input type="radio" name="answers" id="false" value="False">
-    
-        <input type="submit" class="submit" value="Submit!" id="submit-button">
-        <label for="submit-button" class="visually-hidden">Click to submit answer</label>`);
-    
-    });
-}
-
-$("button").on("click", function () {
-    console.log("clicked");
-    // console.log(randomResult.category, randomResult.question);
-
-    $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
-        <form action="">
+        <form action="#">
             <label for="true">True</label>
             <input type="radio" name="answers" id="true" value="True">
+        
             <label for="false">False</label>
             <input type="radio" name="answers" id="false" value="False">
+        
             <input type="submit" class="submit" value="Submit!" id="submit-button">
             <label for="submit-button" class="visually-hidden">Click to submit answer</label>
         </form>`);
 
-        $('.turns').text(Number($(".turns").text())-1);
+        $('.turns').text(Number($(".turns").text()) - 1);
 
-// wrapped it in a form - prevents auto refresh and allows inject below ^^^
-});
+    
+    });
+}
+
+// $("button").on("click", function () {
+//     console.log("clicked");
+//     // console.log(randomResult.category, randomResult.question);
+
+//     $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
+//         <form action="">
+//             <label for="true">True</label>
+//             <input type="radio" name="answers" id="true" value="True">
+
+//             <label for="false">False</label>
+//             <input type="radio" name="answers" id="false" value="False">
+
+//             <input type="submit" class="submit" value="Submit!" id="submit-button">
+//             <label for="submit-button" class="visually-hidden">Click to submit answer</label>
+//         </form>`);
+
+//         $('.turns').text(Number($(".turns").text())-1);
+
+// // wrapped it in a form - prevents auto refresh and allows inject below ^^^
+// });
 
 spinApp.submitButton = function () {
-$("form").on("submit", function (event) {
+$(".quiz").on("submit", ".submit", function (event) {
     event.preventDefault();
+
     const userAnswer = $(`input[name=answers]:checked`).val();
 
     const ajaxAnswer = randomResult.correct_answer;
 
     if (ajaxAnswer === userAnswer) {
         $(".verdict").html(`<p>you win!</p>
-        <input type="submit" class="submit2" value="Next!" id="next-button">
+        <input type="submit" class="next" value="Next!" id="next-button">
         <label for="next-button" class="visually-hidden">Next question</label>`)
         $('.score').text(Number($(".score").text())+5);
 
     } else if (ajaxAnswer !== userAnswer) {
         $(".verdict").html(`<p>you suck!</p> 
-        <input type="submit" class="submit2" value="Next!" id="next-button">
+        <input type="submit" class="next" value="Next!" id="next-button">
         <label for="next-button" class="visually-hidden">Next question</label>`)
     } 
 
-    // ^created verdict div to inject right or wrong message to user
-    // injecting code for next question button
-
-    // let userTurn = $(".turns").val() -- ;
-    // $(".turns").html(`${userTurn}`);
-
-
-    // userTurns();
-
-
 });
 
+}
+
+spinApp.nextButton = function (){
+    $("form").on("submit", ".next", function(){
+        console.log("next");
+    })
 }
 
 $(function(){
@@ -178,10 +182,11 @@ $(function(){
         spinApp.categories = res;
         randomResult = spinApp.randomCategory(spinApp.categories);
         // console.log(res, spinApp.categories);
+        spinApp.spinnerClick();
     });
 
-    spinApp.spinnerClick();
     spinApp.submitButton();
+    spinApp.nextButton();
 
 });
 
