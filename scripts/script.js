@@ -134,9 +134,12 @@ $("button").on("click", function () {
             <label for="submit-button" class="visually-hidden">Click to submit answer</label>
         </form>`);
 
+        $('.turns').text(Number($(".turns").text())-1);
+
 // wrapped it in a form - prevents auto refresh and allows inject below ^^^
 });
 
+spinApp.submitButton = function () {
 $("form").on("submit", function (event) {
     event.preventDefault();
     const userAnswer = $(`input[name=answers]:checked`).val();
@@ -147,6 +150,7 @@ $("form").on("submit", function (event) {
         $(".verdict").html(`<p>you win!</p>
         <input type="submit" class="submit2" value="Next!" id="next-button">
         <label for="next-button" class="visually-hidden">Next question</label>`)
+        $('.score').text(Number($(".score").text())+5);
 
     } else if (ajaxAnswer !== userAnswer) {
         $(".verdict").html(`<p>you suck!</p> 
@@ -157,7 +161,16 @@ $("form").on("submit", function (event) {
     // ^created verdict div to inject right or wrong message to user
     // injecting code for next question button
 
+    // let userTurn = $(".turns").val() -- ;
+    // $(".turns").html(`${userTurn}`);
+
+
+    // userTurns();
+
+
 });
+
+}
 
 $(function(){
     // these ... are both spreads
