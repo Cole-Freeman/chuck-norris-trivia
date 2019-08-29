@@ -89,18 +89,20 @@ spinApp.film = $.ajax({
     return result.results[0];
 })
 
-spinApp.singleAjaxCall = function (categoryId){
-    $.ajax({
-        url: "https://opentdb.com/api.php?",
+spinApp.singleAjaxCall = function(categoryId){
+   return $.ajax({
+        url: "https://opentdb.com/api.php",
         type: 'GET',
         dataType: 'json',
         data: {
             amount: 1,
             category: categoryId,
             difficulty: "easy",
-            type: Boolean
+            type: "boolean",
         }
-    });
+    }).then(function (result) {
+       return result.results[0];
+    })
 }
 
 
@@ -131,9 +133,14 @@ spinApp.spinnerClick = function (){
         console.log("clicked");
         // console.log(randomResult.category, randomResult.question);
         const selectedCat = spinApp.randomCategory(spinApp.cat);
-        console.log(selectedCat);
+  
         // spinApp.singleAjaxCall(selectedCat.id);
-        console.log(spinApp.singleAjaxCall(selectedCat.id));
+        const test = spinApp.singleAjaxCall(selectedCat.id);
+        // console.log(spinApp.singleAjaxCall(selectedCat.id));
+        $.when(test).then((res) => {
+            console.log(res);
+        })
+        // setTimeout(function () { console.log(spinApp.singleAjaxCall(17)); }, 1000);
 
         // $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
         // <form action="#">
