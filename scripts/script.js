@@ -89,10 +89,34 @@ spinApp.film = $.ajax({
     return result.results[0];
 })
 
+spinApp.singleAjaxCall = function (categoryId){
+    $.ajax({
+        url: "https://opentdb.com/api.php?",
+        type: 'GET',
+        dataType: 'json',
+        data: {
+            amount: 1,
+            category: categoryId,
+            difficulty: "easy",
+            type: Boolean
+        }
+    });
+}
+
 
 // Array of categories for randomizing (promises)
 spinApp.categories = [spinApp.animals, spinApp.celebs, spinApp.geo, spinApp.music, spinApp.science, spinApp.sport, spinApp.tv, spinApp.film];
 
+spinApp.cat = [ 
+    {category: "animals", id: 27},
+    {category: "celebs", id: 22},
+    { category: "geo", id: 21 },
+    { category: "music", id: 12 },
+    { category: "science", id: 17 },
+    { category: "sport", id: 26 },
+    { category: "tv", id: 14 },
+    { category: "film", id: 11 },
+    ];
 // Randomize function
 spinApp.randomCategory = function (array) {
     // console.log("pls work");
@@ -102,49 +126,32 @@ spinApp.randomCategory = function (array) {
 };
 
 spinApp.spinnerClick = function (){
-    // why wont button click work in here? motherfucker
+
     $("button").on("click", function () {
         console.log("clicked");
-        console.log(randomResult.category, randomResult.question);
-    
-        $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
-        <form action="#">
-            <label for="true">True</label>
-            <input type="radio" name="answers" id="true" value="True">
-        
-            <label for="false">False</label>
-            <input type="radio" name="answers" id="false" value="False">
-        
-            <input type="submit" class="submit" value="Submit!" id="submit-button">
-            <label for="submit-button" class="visually-hidden">Click to submit answer</label>
-        </form>`);
+        // console.log(randomResult.category, randomResult.question);
+        const selectedCat = spinApp.randomCategory(spinApp.cat);
+        console.log(selectedCat);
+        // spinApp.singleAjaxCall(selectedCat.id);
+        console.log(spinApp.singleAjaxCall(selectedCat.id));
 
-        $('.turns').text(Number($(".turns").text()) - 1);
+        // $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
+        // <form action="#">
+        //     <label for="true">True</label>
+        //     <input type="radio" name="answers" id="true" value="True">
+        
+        //     <label for="false">False</label>
+        //     <input type="radio" name="answers" id="false" value="False">
+        
+        //     <input type="submit" class="submit" value="Submit!" id="submit-button">
+        //     <label for="submit-button" class="visually-hidden">Click to submit answer</label>
+        // </form>`);
+
+        // $('.turns').text(Number($(".turns").text()) - 1);
 
     
     });
 }
-
-// $("button").on("click", function () {
-//     console.log("clicked");
-//     // console.log(randomResult.category, randomResult.question);
-
-//     $(".quiz").html(`<h2>${randomResult.category}</h2><p>${randomResult.question}</p>
-//         <form action="">
-//             <label for="true">True</label>
-//             <input type="radio" name="answers" id="true" value="True">
-
-//             <label for="false">False</label>
-//             <input type="radio" name="answers" id="false" value="False">
-
-//             <input type="submit" class="submit" value="Submit!" id="submit-button">
-//             <label for="submit-button" class="visually-hidden">Click to submit answer</label>
-//         </form>`);
-
-//         $('.turns').text(Number($(".turns").text())-1);
-
-// // wrapped it in a form - prevents auto refresh and allows inject below ^^^
-// });
 
 spinApp.submitButton = function () {
 $(".quiz").on("submit", ".submit", function (event) {
@@ -178,15 +185,15 @@ spinApp.nextButton = function (){
 
 $(function(){
     // these ... are both spreads
-    $.when(...spinApp.categories).then((...res) =>{
-        spinApp.categories = res;
-        randomResult = spinApp.randomCategory(spinApp.categories);
-        // console.log(res, spinApp.categories);
-        spinApp.spinnerClick();
-    });
-
-    spinApp.submitButton();
-    spinApp.nextButton();
+    // $.when(...spinApp.categories).then((...res) =>{
+    //     spinApp.categories = res;
+    //     randomResult = spinApp.randomCategory(spinApp.categories);
+    //     // console.log(res, spinApp.categories);
+    // });
+    
+    spinApp.spinnerClick();
+    // spinApp.submitButton();
+    // spinApp.nextButton();
 
 });
 
