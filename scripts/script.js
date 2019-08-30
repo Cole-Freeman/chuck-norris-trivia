@@ -125,13 +125,15 @@ spinApp.randomCategory = function (array) {
     return array[randomNumber];
 };
 
+let answerObjectSave = "";
+
 spinApp.spinnerClick = function (){
 
     $("button").on("click", function () {
         console.log("clicked");
 
         const turnsLeft = $(".turns").text();
-        console.log (turnsLeft);
+        // console.log (turnsLeft);
 
         $(".quiz").html(``);
 
@@ -141,7 +143,8 @@ spinApp.spinnerClick = function (){
             const success = spinApp.singleAjaxCall(selectedCat.id);
         
             $.when(success).then((answerObject) => {
-                console.log(answerObject);
+                // console.log(answerObject);
+                
                 $(".quiz").html(`<h2>${answerObject.category}</h2><p>${answerObject.question}</p>
                 <form action="#">
                     <label for="true">True</label>
@@ -155,48 +158,59 @@ spinApp.spinnerClick = function (){
                 </form>`);
         
                 $('.turns').text(Number($(".turns").text()) - 1);
+
+                answerObjectSave = answerObject;
             })
 
         } else {
-            alert('jabrone');
+            // switch this to sweet alert
+            if(!alert('Game Over! Play again?')){window.location.reload();}
         }
        
-
-
         // setTimeout(function () { console.log(spinApp.singleAjaxCall(17)); }, 1000)
+
+        $(".verdict").html(``)
+
+        // added clear verdict html upon spinner spinz
     
     });
 }
 
+console.log(answerObjectSave);
+
 spinApp.submitButton = function () {
-$(".quiz").on("submit", ".submit", function (event) {
+$("form").on("submit", function (event) {
     event.preventDefault();
 
     const userAnswer = $(`input[name=answers]:checked`).val();
+    const ajaxAnswer = answerObjectSave.correct_answer;
+    const incorrectAnswer = answerObjectSave.incorrect_answers;
+    console.log(answerObjectSave);
+    console.log(incorrectAnswer);
+    console.log(userAnswer);
+    
 
-    const ajaxAnswer = randomResult.correct_answer;
+    // $("form").validate();
 
     if (ajaxAnswer === userAnswer) {
-        $(".verdict").html(`<p>you win!</p>
-        <input type="submit" class="next" value="Next!" id="next-button">
-        <label for="next-button" class="visually-hidden">Next question</label>`)
+        $(".verdict").html(`<p>That's right!  You get 5 points!</p>`)
         $('.score').text(Number($(".score").text())+5);
 
-    } else if (ajaxAnswer !== userAnswer) {
-        $(".verdict").html(`<p>you suck!</p> 
-        <input type="submit" class="next" value="Next!" id="next-button">
-        <label for="next-button" class="visually-hidden">Next question</label>`)
-    } 
+    } else if (incorrectAnswer == userAnswer) {
+        $(".verdict").html(`<p>Incorrect Answer</p>`)
+        
+    }  else {
+        $(".verdict").html(`<p>Select an answer!</p>`)
+    }
+
 
 });
 
 }
 
-spinApp.nextButton = function (){
-    $("form").on("submit", ".next", function(){
-        console.log("next");
-    })
-}
+
+
+
 
 $(function(){
     // these ... are both spreads
@@ -207,7 +221,7 @@ $(function(){
     // });
     
     spinApp.spinnerClick();
-    // spinApp.submitButton();
+    spinApp.submitButton();
     // spinApp.nextButton();
 
 });
