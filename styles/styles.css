@@ -199,3 +199,16 @@ button {
   background: 0;
   border: none;
 }
+
+h1 {
+  font-family: 'Major Mono Display', monospace;
+}
+
+p {
+  font-family: 'Red Hat Text', sans-serif;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.score, .turns {
+  font-family: 'Share Tech Mono', monospace;
+}
