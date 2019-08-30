@@ -125,6 +125,10 @@ spinApp.randomCategory = function (array) {
     return array[randomNumber];
 };
 
+// let answerObject = function (){
+
+// };
+
 spinApp.spinnerClick = function (){
 
     $("button").on("click", function () {
@@ -162,8 +166,6 @@ spinApp.spinnerClick = function (){
             if(!alert('Game Over! Play again?')){window.location.reload();}
         }
        
-
-
         // setTimeout(function () { console.log(spinApp.singleAjaxCall(17)); }, 1000)
     
     });
@@ -174,8 +176,9 @@ $("form").on("submit", function (event) {
     event.preventDefault();
 
     const userAnswer = $(`input[name=answers]:checked`).val();
-
-    const ajaxAnswer = randomResult.correct_answer;
+    // answerObject();
+    const ajaxAnswer = answerObject.correct_answer;
+    console.log(answerObject);
 
     if (ajaxAnswer === userAnswer) {
         $(".verdict").html(`<p>you win!</p>`)
@@ -199,7 +202,7 @@ $(function(){
     // });
     
     spinApp.spinnerClick();
-    // spinApp.submitButton();
+    spinApp.submitButton();
     // spinApp.nextButton();
 
 });
