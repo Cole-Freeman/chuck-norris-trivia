@@ -11,18 +11,18 @@
 <body>
     <header>
         <h1>Game Name</h1>
+        <div class="counters">
+            <p class="border"><span class="score">0</span> Your Score</p>
+            <p class="border"><span class="turns">3</span> Turns Left</p>
+        </div>
     </header>
-    <main>
+    <main class="wrapper">
         <section class="spinner">
             <div class="start">
                 <label for="button" class="visually-hidden">Click me to start the game!</label>
                 <button type="submit" id="button"><img src="assets/wheel.svg" alt="Game spinner."></button>
             </div>
-            <p><span class="score">0</span> Your Score</p>
-            <p><span class="turns">3</span> Turns Left</p>
         </section>
-
-        
 
         <section class="trivia">
             <form class="quiz"  action="#">

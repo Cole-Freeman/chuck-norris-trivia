@@ -13,15 +13,19 @@
     overflow: hidden;
 }
 
-button {
-    height: 45vh;
-    width: 45%;
-    background: 0;
-    border: none;
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
 }
 
 // time to style!
 
+
+html {
+    font-size: calc(2vw + 10px);
+    line-height: 1.5;
+    margin: 0;
+}
 h1 {
     // font-family: 'Share Tech Mono', monospace;
     font-family: 'Major Mono Display', monospace;
@@ -30,8 +34,10 @@ h1 {
 p {
     // font-family: 'Red Hat Text', sans-serif;
     font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
 }
 
 .score, .turns {
     font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
 }

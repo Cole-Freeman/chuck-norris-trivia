@@ -70,7 +70,7 @@ spinApp.spinnerClick = function (){
 
         } else {
             // switch this to sweet alert
-            if(!alert('Game Over! Play again?')){window.location.reload();}
+            if(!swal('Game Over! Play again?')){window.location.reload();}
         }
 
         $(".verdict").html(``)
@@ -89,11 +89,11 @@ spinApp.submitButton = function () {
         const incorrectAnswer = answerObjectSave.incorrect_answers;
 
         if (ajaxAnswer === userAnswer) {
-            $(".verdict").html(`<p>That's right!  You get 5 points!</p>`)
+            $(".verdict").html(`<p>That's right!  You get 5 points! Spin Again</p>`)
             $('.score').text(Number($(".score").text())+5);
 
         } else if (incorrectAnswer == userAnswer) {
-            $(".verdict").html(`<p>Incorrect Answer</p>`)
+            $(".verdict").html(`<p>Incorrect Answer, Spin Again</p>`)
             
         }  else {
             $(".verdict").html(`<p>Select an answer!</p>`)
