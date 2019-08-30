@@ -141,7 +141,7 @@ spinApp.spinnerClick = function (){
             const success = spinApp.singleAjaxCall(selectedCat.id);
         
             $.when(success).then((answerObject) => {
-                console.log(answerObject);
+                // console.log(answerObject);
                 $(".quiz").html(`<h2>${answerObject.category}</h2><p>${answerObject.question}</p>
                 <form action="#">
                     <label for="true">True</label>
@@ -159,7 +159,7 @@ spinApp.spinnerClick = function (){
 
         } else {
             // switch this to sweet alert
-            if(!alert('Alert For your User!')){window.location.reload();}
+            if(!alert('Game Over! Play again?')){window.location.reload();}
         }
        
 
@@ -170,7 +170,7 @@ spinApp.spinnerClick = function (){
 }
 
 spinApp.submitButton = function () {
-$(".quiz").on("submit", ".submit", function (event) {
+$("form").on("submit", function (event) {
     event.preventDefault();
 
     const userAnswer = $(`input[name=answers]:checked`).val();
@@ -178,26 +178,17 @@ $(".quiz").on("submit", ".submit", function (event) {
     const ajaxAnswer = randomResult.correct_answer;
 
     if (ajaxAnswer === userAnswer) {
-        $(".verdict").html(`<p>you win!</p>
-        <input type="submit" class="next" value="Next!" id="next-button">
-        <label for="next-button" class="visually-hidden">Next question</label>`)
+        $(".verdict").html(`<p>you win!</p>`)
         $('.score').text(Number($(".score").text())+5);
 
     } else if (ajaxAnswer !== userAnswer) {
-        $(".verdict").html(`<p>you suck!</p> 
-        <input type="submit" class="next" value="Next!" id="next-button">
-        <label for="next-button" class="visually-hidden">Next question</label>`)
+        $(".verdict").html(`<p>you suck!</p>`)
     } 
 
 });
 
 }
 
-spinApp.nextButton = function (){
-    $("form").on("submit", ".next", function(){
-        console.log("next");
-    })
-}
 
 $(function(){
     // these ... are both spreads
