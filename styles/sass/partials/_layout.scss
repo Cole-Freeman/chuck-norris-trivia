@@ -48,31 +48,31 @@ h2 {
 }
 
 .border {
-    border: 1px solid black;
+    border: 2px solid $accentred;
     border-radius: 5px;
     padding: 10px 25px 10px;
 }
 
 
-.swal-modal{
-    height: 30%;
-}
+// .swal-modal{
+//     height: 30%;
+// }
 
-.swal-button {
-    height: 30%;
-    width: 70%;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 1.1rem;
+// .swal-button {
+//     height: 30%;
+//     width: 70%;
+//     font-family: 'Share Tech Mono', monospace;
+//     font-size: 1.1rem;
 
-}
-.swal-button-container {
-    width: 95%;
-}
-.swal-text {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 1.1rem;
-    padding-bottom: 30px;
-}
-.swal-footer {
-    text-align: center;
-}
+// }
+// .swal-button-container {
+//     width: 95%;
+// }
+// .swal-text {
+//     font-family: 'Share Tech Mono', monospace;
+//     font-size: 1.1rem;
+//     padding-bottom: 30px;
+// }
+// .swal-footer {
+//     text-align: center;
+// }

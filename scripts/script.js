@@ -53,11 +53,11 @@ spinApp.spinnerClick = function (){
                 
                 $(".quiz").html(`<h2>${answerObject.category}</h2><p>${answerObject.question}</p>
                 <form action="#">
-                    <label for="true">True</label>
                     <input type="radio" name="answers" id="true" value="True">
+                    <label for="true">True</label>
                 
-                    <label for="false">False</label>
                     <input type="radio" name="answers" id="false" value="False">
+                    <label for="false">False</label>
                 
                     <input type="submit" class="submit" value="Submit!" id="submit-button">
                     <label for="submit-button" class="visually-hidden">Click to submit answer</label>
@@ -70,7 +70,7 @@ spinApp.spinnerClick = function (){
 
         } else {
             // switch this to sweet alert
-            if(!swal('Game Over! Play again?')){window.location.reload();}
+            if(!alert('Game Over! Play again?')){window.location.reload();}
         }
 
         $(".verdict").html(``)
