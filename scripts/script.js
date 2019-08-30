@@ -168,6 +168,10 @@ spinApp.spinnerClick = function (){
         }
        
         // setTimeout(function () { console.log(spinApp.singleAjaxCall(17)); }, 1000)
+
+        $(".verdict").html(``)
+
+        // added clear verdict html upon spinner spinz
     
     });
 }
@@ -180,19 +184,32 @@ $("form").on("submit", function (event) {
 
     const userAnswer = $(`input[name=answers]:checked`).val();
     const ajaxAnswer = answerObjectSave.correct_answer;
+    const incorrectAnswer = answerObjectSave.incorrect_answers;
     console.log(answerObjectSave);
+    console.log(incorrectAnswer);
+    console.log(userAnswer);
+    
+
+    // $("form").validate();
 
     if (ajaxAnswer === userAnswer) {
-        $(".verdict").html(`<p>you win!</p>`)
+        $(".verdict").html(`<p>That's right!  You get 5 points!</p>`)
         $('.score').text(Number($(".score").text())+5);
 
-    } else if (ajaxAnswer !== userAnswer) {
-        $(".verdict").html(`<p>you suck!</p>`)
-    } 
+    } else if (incorrectAnswer == userAnswer) {
+        $(".verdict").html(`<p>Incorrect Answer</p>`)
+        
+    }  else {
+        $(".verdict").html(`<p>Select an answer!</p>`)
+    }
+
 
 });
 
 }
+
+
+
 
 
 $(function(){
