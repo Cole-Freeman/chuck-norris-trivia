@@ -125,9 +125,7 @@ spinApp.randomCategory = function (array) {
     return array[randomNumber];
 };
 
-// let answerObject = function (){
-
-// };
+let answerObjectSave = "";
 
 spinApp.spinnerClick = function (){
 
@@ -135,7 +133,7 @@ spinApp.spinnerClick = function (){
         console.log("clicked");
 
         const turnsLeft = $(".turns").text();
-        console.log (turnsLeft);
+        // console.log (turnsLeft);
 
         $(".quiz").html(``);
 
@@ -146,6 +144,7 @@ spinApp.spinnerClick = function (){
         
             $.when(success).then((answerObject) => {
                 // console.log(answerObject);
+                
                 $(".quiz").html(`<h2>${answerObject.category}</h2><p>${answerObject.question}</p>
                 <form action="#">
                     <label for="true">True</label>
@@ -159,6 +158,8 @@ spinApp.spinnerClick = function (){
                 </form>`);
         
                 $('.turns').text(Number($(".turns").text()) - 1);
+
+                answerObjectSave = answerObject;
             })
 
         } else {
@@ -171,14 +172,15 @@ spinApp.spinnerClick = function (){
     });
 }
 
+console.log(answerObjectSave);
+
 spinApp.submitButton = function () {
 $("form").on("submit", function (event) {
     event.preventDefault();
 
     const userAnswer = $(`input[name=answers]:checked`).val();
-    // answerObject();
-    const ajaxAnswer = answerObject.correct_answer;
-    console.log(answerObject);
+    const ajaxAnswer = answerObjectSave.correct_answer;
+    console.log(answerObjectSave);
 
     if (ajaxAnswer === userAnswer) {
         $(".verdict").html(`<p>you win!</p>`)
