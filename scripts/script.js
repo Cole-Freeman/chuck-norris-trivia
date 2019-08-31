@@ -88,6 +88,8 @@ spinApp.spinnerClick = function (){
 }
 
 
+// why wont this save on Sebastian's computer?
+
 spinApp.submitButton = function () {
     $("form").on("submit", function (event) {
         event.preventDefault();
@@ -97,15 +99,15 @@ spinApp.submitButton = function () {
         const incorrectAnswer = answerObjectSave.incorrect_answers;
 
         if (ajaxAnswer === userAnswer) {
-            $(".verdict").html(`<p>That's right!  You get 5 points, and an extra Spin - you Q-Wiz! Spin Again</p>`)
+            swal(`That's right!  You get 5 points, and an extra Spin - you Q-Wiz! Spin Again`)
             $('.score').text(Number($(".score").text())+5);
             $('.turns').text(Number($(".turns").text()) + 1);
 
         } else if (incorrectAnswer == userAnswer) {
-            $(".verdict").html(`<p>Incorrect Answer, Spin Again</p>`)
+            swal(`Incorrect Answer, Spin Again`)
             
         }  else {
-            $(".verdict").html(`<p>Select an answer!</p>`)
+            swal(`Select an answer!`)
         }
 
     });
@@ -118,3 +120,5 @@ $(function(){
     spinApp.submitButton();
 
 });
+
+// test save

@@ -65,25 +65,30 @@ form {
 }
 
 
-// .swal-modal{
-//     height: 30%;
-// }
+.swal-modal{
+    height: 30%;
+}
 
-// .swal-button {
-//     height: 30%;
-//     width: 70%;
-//     font-family: 'Share Tech Mono', monospace;
-//     font-size: 1.1rem;
+.swal-button {
+    height: 30%;
+    width: 70%;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    background: $accentred;
 
-// }
-// .swal-button-container {
-//     width: 95%;
-// }
-// .swal-text {
-//     font-family: 'Share Tech Mono', monospace;
-//     font-size: 1.1rem;
-//     padding-bottom: 30px;
-// }
-// .swal-footer {
-//     text-align: center;
-// }
+    &:not([disabled]):hover {
+        background: $darkgrey;
+    }
+
+}
+.swal-button-container {
+    width: 95%;
+}
+.swal-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    text-align: center;
+}
+.swal-footer {
+    text-align: center;
+}

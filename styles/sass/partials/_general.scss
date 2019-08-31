@@ -139,3 +139,9 @@ label {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
 }
+
+#spinner:hover {
+    border: 1px solid rebeccapurple;
+    border-radius: 50%;
+    // transition: ease in-out 2s;
+}
