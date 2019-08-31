@@ -37,11 +37,14 @@ spinApp.spinnerClick = function (){
         if (turnsLeft > 0) {
             const selectedCat = spinApp.randomCategory(spinApp.cat);
             const success = spinApp.singleAjaxCall(selectedCat.id);
+
             $("#spinner").addClass("rotation");
             setTimeout(function () {
                 $("#spinner").removeClass('rotation');
             }, 1500);
-        
+
+            $('button').attr('disabled', 'disabled');
+            
             $.when(success).then((answerObject) => {
                 
                 $(".quiz").html(`<h2>${answerObject.category}</h2><p>${answerObject.question}</p>
@@ -74,18 +77,29 @@ spinApp.spinnerClick = function (){
 spinApp.submitButton = function () {
     $("form").on("submit", function (event) {
         event.preventDefault();
+
         const userAnswer = $(`input[name=answers]:checked`).val();
         const ajaxAnswer = answerObjectSave.correct_answer;
         const incorrectAnswer = answerObjectSave.incorrect_answers;
+        
         if (ajaxAnswer === userAnswer) {
-            swal(`That's right!  You get 5 points, and an extra Spin - you Q-Wiz! Spin Again`)
+            swal(`That's right!  You get 5 points, and an extra Spin - you Q-Wiz! Spin Again`);
             $('.score').text(Number($(".score").text())+5);
             $('.turns').text(Number($(".turns").text()) + 1);
+            $('input[type=radio]').attr('disabled', 'disabled');
+            $('input[type=submit]').attr('disabled', 'disabled');
+            $('button').removeAttr('disabled', 'disabled');
+
         } else if (incorrectAnswer == userAnswer) {
-            swal(`Incorrect Answer, Spin Again`)
+            swal(`Incorrect Answer, Spin Again`);
+            $('input[type=radio]').attr('disabled', 'disabled');
+            $('input[type=submit]').attr('disabled', 'disabled');
+            $('button').removeAttr('disabled', 'disabled');
             
         }  else {
-            swal(`Select an answer!`)
+            swal(`Select an answer!`);
+            
+            
         }
     });
 }
