@@ -48,6 +48,11 @@ spinApp.spinnerClick = function (){
 
             const selectedCat = spinApp.randomCategory(spinApp.cat);
             const success = spinApp.singleAjaxCall(selectedCat.id);
+
+            $("#spinner").addClass("rotation");
+            setTimeout(function () {
+                $("#spinner").removeClass('rotation');
+            }, 1500);
         
             $.when(success).then((answerObject) => {
                 
@@ -81,6 +86,7 @@ spinApp.spinnerClick = function (){
     
     });
 }
+
 
 spinApp.submitButton = function () {
     $("form").on("submit", function (event) {

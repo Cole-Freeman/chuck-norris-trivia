@@ -132,3 +132,10 @@ label {
     // margin-bottom: 10px;
 }
 
+.rotation {
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}

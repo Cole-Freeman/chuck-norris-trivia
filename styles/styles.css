@@ -301,6 +301,18 @@ label {
   font-family: 'Share Tech Mono', monospace;
 }
 
+.rotation {
+  overflow: hidden;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
