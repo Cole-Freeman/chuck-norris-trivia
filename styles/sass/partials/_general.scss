@@ -120,6 +120,10 @@ label {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
 }
+
+// .spin-svg {
+//     z-index: 999;
+// }
 .spin-svg:hover {
     border: 2px solid $lightred;
     border-radius: 50%;
@@ -133,3 +137,14 @@ label {
         border: 5px solid $accentred;
     }
   }
+
+  
+  /* no outline for non-keyboard-inputs elements */
+  button:focus {
+    outline: none;
+  }
+
+//   body.user-is-tabbing *:focus {
+//     outline: 2px solid #7AACFE !important; /* for non-webkit browsers */
+//     outline: 5px auto -webkit-focus-ring-color !important;
+//   }

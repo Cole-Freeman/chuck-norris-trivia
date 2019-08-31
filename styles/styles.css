@@ -336,6 +336,11 @@ label {
   }
 }
 
+/* no outline for non-keyboard-inputs elements */
+button:focus {
+  outline: none;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
