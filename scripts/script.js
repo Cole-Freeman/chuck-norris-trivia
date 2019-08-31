@@ -1,6 +1,4 @@
-  
 const spinApp = {};
-
 spinApp.singleAjaxCall = function(categoryId){
    return $.ajax({
         url: "https://opentdb.com/api.php",
@@ -16,7 +14,6 @@ spinApp.singleAjaxCall = function(categoryId){
        return result.results[0];
     })
 }
-
 spinApp.cat = [ 
     {category: "animals", id: 27},
     {category: "celebs", id: 22},
@@ -27,28 +24,19 @@ spinApp.cat = [
     {category: "tv", id: 14},
     {category: "film", id: 11},
     ];
-
 // Randomize function
 spinApp.randomCategory = function (array) {
     const randomNumber = Math.floor(Math.random() * this.cat.length);
     return array[randomNumber];
 };
-
 let answerObjectSave = "";
-
 spinApp.spinnerClick = function (){
-
     $("button").on("click", function () {
-
         const turnsLeft = $(".turns").text();
-
         $(".quiz").html(``);
-
         if (turnsLeft > 0) {
-
             const selectedCat = spinApp.randomCategory(spinApp.cat);
             const success = spinApp.singleAjaxCall(selectedCat.id);
-
             $("#spinner").addClass("rotation");
             setTimeout(function () {
                 $("#spinner").removeClass('rotation');
@@ -71,54 +59,39 @@ spinApp.spinnerClick = function (){
                 </form>`);
         
                 $('.turns').text(Number($(".turns").text()) - 1);
-
                 answerObjectSave = answerObject;
             })
-
         } else {
             // switch this to sweet alert
             if(!alert('Game Over! Play again?')){window.location.reload();}
         }
-
         $(".verdict").html(``)
-
         // added clear verdict html upon spinner spinz
     
     });
 }
-
-
 // why wont this save on Sebastian's computer?
-
 spinApp.submitButton = function () {
     $("form").on("submit", function (event) {
         event.preventDefault();
-
         const userAnswer = $(`input[name=answers]:checked`).val();
         const ajaxAnswer = answerObjectSave.correct_answer;
         const incorrectAnswer = answerObjectSave.incorrect_answers;
-
         if (ajaxAnswer === userAnswer) {
             swal(`That's right!  You get 5 points, and an extra Spin - you Q-Wiz! Spin Again`)
             $('.score').text(Number($(".score").text())+5);
             $('.turns').text(Number($(".turns").text()) + 1);
-
         } else if (incorrectAnswer == userAnswer) {
             swal(`Incorrect Answer, Spin Again`)
             
         }  else {
             swal(`Select an answer!`)
         }
-
     });
-
 }
-
 $(function(){
     
     spinApp.spinnerClick();
     spinApp.submitButton();
-
 });
-
 // test save

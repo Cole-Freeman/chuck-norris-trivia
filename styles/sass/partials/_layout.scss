@@ -1,21 +1,17 @@
-
 main {
     // height: 90vh;
     display: flex;
 }
-
 button {
     height: 80vh;
     width: 80%;
     background: 0;
     border: none;
 }
-
 header {
     display: flex;
     flex-direction: row-reverse;
 }
-
 .counters {
     width: 50%;
     display: flex;
@@ -25,61 +21,45 @@ header {
     p {
         margin: 0;
     }
-
 }
-
 .turns, .score {
     padding-right: 20px;
 }
-
 .spinner {
     width: 50%;
 }
-
 .trivia {
     width: 50%;
     padding-top: 50px;
 }
-
 .border {
     border: 2px solid $accentred;
     border-radius: 5px;
     padding: 10px 25px 10px;
 }
-
-
 form {
     text-align: center;
 }
-
 .button-div {
     padding-bottom: 20px;
     margin: auto;
 }
-
 .verdict p { 
-
     padding-top: 20px;
     font-size: 0.8rem
-
 }
-
-
 .swal-modal{
     height: 30%;
 }
-
 .swal-button {
     height: 30%;
     width: 70%;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.6rem;
     background: $accentred;
-
     &:not([disabled]):hover {
         background: $darkgrey;
     }
-
 }
 .swal-button-container {
     width: 95%;
