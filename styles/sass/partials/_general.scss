@@ -34,13 +34,26 @@ html {
 }
 h1 {
     // font-family: 'Share Tech Mono', monospace;
+    text-transform: uppercase;
+    font-size: 1.9rem;
     font-family: 'Major Mono Display', monospace;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1rem;
+    margin: 0;
+    
 }
 
 p {
     // font-family: 'Red Hat Text', sans-serif;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.9rem;
+    margin-top: 5px;
 }
 
 .score, .turns {
@@ -54,7 +67,9 @@ form input[type=radio] {
 }
 
 input[type=radio]+label {
-    padding: 10px 0;
+    font-size: 0.8rem;
+    // margin: auto;
+    padding: 20px 10px 10px 0;
     border: 3px solid transparent;
 
     &:hover {
@@ -73,8 +88,8 @@ input[type=radio]+label::before {
     display: inline-block;
     border: 5px solid #fff;
     margin: 0 0.5em;
-    width: 1rem;
-    height: 1rem;
+    width: 0.8rem;
+    height: 0.8rem;
     border-radius: 5px;
     box-shadow: 4px 4px $accentred;
 }
@@ -89,18 +104,21 @@ input[type=radio]+label {
 
 input[type=submit] {
     font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
     display: block;
-    margin: 10px;
+    margin: auto;
     border: none;
     padding: 10px;
     background: none;
     border: 2px solid $accentred;
     border-radius: 5px;
     box-shadow: 8px 8px $accentred;
+    text-align: center;
 
     &:hover {
         background: $darkgrey;
         color: white;
+        // padding-top: 10px;
     }
 
     &:focus {
@@ -111,5 +129,6 @@ input[type=submit] {
 
 label {
     font-family: 'Share Tech Mono', monospace;
+    // margin-bottom: 10px;
 }
 

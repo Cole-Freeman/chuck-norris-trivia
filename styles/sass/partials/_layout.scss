@@ -16,21 +16,15 @@ header {
     flex-direction: row-reverse;
 }
 
-h1 {
-    width: 50%;
-    text-align: center;
-    margin: 0;
-}
-
-h2 {
-    margin: 0;
-}
-
 .counters {
     width: 50%;
     display: flex;
     padding: 0 20px;
     justify-content: space-around;
+    align-items: center;
+    p {
+        margin: 0;
+    }
 
 }
 
@@ -44,13 +38,30 @@ h2 {
 
 .trivia {
     width: 50%;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .border {
     border: 2px solid $accentred;
     border-radius: 5px;
     padding: 10px 25px 10px;
+}
+
+
+form {
+    text-align: center;
+}
+
+.button-div {
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+.verdict p { 
+
+    padding-top: 20px;
+    font-size: 0.8rem
+
 }
 
 

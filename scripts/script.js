@@ -53,11 +53,13 @@ spinApp.spinnerClick = function (){
                 
                 $(".quiz").html(`<h2>${answerObject.category}</h2><p>${answerObject.question}</p>
                 <form action="#">
-                    <input type="radio" name="answers" id="true" value="True">
-                    <label for="true">True</label>
-                
-                    <input type="radio" name="answers" id="false" value="False">
-                    <label for="false">False</label>
+                    <div class ="button-div">
+                        <input type="radio" name="answers" id="true" value="True">
+                        <label for="true">True</label>
+                    
+                        <input type="radio" name="answers" id="false" value="False">
+                        <label for="false">False</label>
+                    </div>
                 
                     <input type="submit" class="submit" value="Submit!" id="submit-button">
                     <label for="submit-button" class="visually-hidden">Click to submit answer</label>
@@ -89,8 +91,9 @@ spinApp.submitButton = function () {
         const incorrectAnswer = answerObjectSave.incorrect_answers;
 
         if (ajaxAnswer === userAnswer) {
-            $(".verdict").html(`<p>That's right!  You get 5 points! Spin Again</p>`)
+            $(".verdict").html(`<p>That's right!  You get 5 points, and an extra Spin - you Q-Wiz! Spin Again</p>`)
             $('.score').text(Number($(".score").text())+5);
+            $('.turns').text(Number($(".turns").text()) + 1);
 
         } else if (incorrectAnswer == userAnswer) {
             $(".verdict").html(`<p>Incorrect Answer, Spin Again</p>`)
