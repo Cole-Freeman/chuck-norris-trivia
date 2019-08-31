@@ -88,6 +88,8 @@ spinApp.spinnerClick = function (){
 }
 
 
+// why wont this save on Sebastian's computer?
+
 spinApp.submitButton = function () {
     $("form").on("submit", function (event) {
         event.preventDefault();
