@@ -313,6 +313,11 @@ label {
   -webkit-transform: rotate(360deg);
 }
 
+#spinner:hover {
+  border: 1px solid rebeccapurple;
+  border-radius: 50%;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -384,4 +389,34 @@ form {
 .verdict p {
   padding-top: 20px;
   font-size: 0.8rem;
+}
+
+.swal-modal {
+  height: 30%;
+}
+
+.swal-button {
+  height: 30%;
+  width: 70%;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  background: #E85A4f;
+}
+
+.swal-button:not([disabled]):hover {
+  background: #8E8D8A;
+}
+
+.swal-button-container {
+  width: 95%;
+}
+
+.swal-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.swal-footer {
+  text-align: center;
 }
