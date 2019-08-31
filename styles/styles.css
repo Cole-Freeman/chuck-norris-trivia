@@ -313,9 +313,27 @@ label {
   -webkit-transform: rotate(360deg);
 }
 
-#spinner:hover {
-  border: 1px solid rebeccapurple;
+.spin-svg:hover {
+  border: 2px solid #d68f87;
   border-radius: 50%;
+  -webkit-animation: glow 0.3s linear infinite alternate;
+          animation: glow 0.3s linear infinite alternate;
+}
+
+.spin-svg:focus {
+  border-radius: 50%;
+}
+
+@-webkit-keyframes glow {
+  to {
+    border: 5px solid #E85A4f;
+  }
+}
+
+@keyframes glow {
+  to {
+    border: 5px solid #E85A4f;
+  }
 }
 
 main {

@@ -140,8 +140,21 @@ label {
     -webkit-transform: rotate(360deg);
 }
 
-#spinner:hover {
-    border: 1px solid rebeccapurple;
+.spin-svg:hover {
+    border: 2px solid $lightred;
     border-radius: 50%;
-    // transition: ease in-out 2s;
+    animation: glow 0.3s linear infinite alternate;
+
 }
+
+.spin-svg:focus {
+
+    border-radius: 50%;
+
+}
+
+@keyframes glow{
+    to {
+        border: 5px solid $accentred;
+    }
+  }
