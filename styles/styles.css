@@ -230,7 +230,7 @@ footer {
 
 footer p {
   text-align: center;
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   background: #E85A4f;
   padding: 5px;
   margin: 0;
@@ -603,7 +603,7 @@ form {
 @media (max-width: 480px) {
   button {
     height: 20%;
-    width: 100%;
+    width: 300px;
     padding-top: 20px;
   }
   input[type=submit] {
