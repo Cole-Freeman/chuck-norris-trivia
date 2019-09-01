@@ -345,12 +345,8 @@ label {
 }
 
 .instructions {
-  display: block;
-  font-size: 0.7rem;
+  white-space: pre-line;
   text-align: left;
-  width: 70%;
-  margin: 0 auto;
-  color: #555555;
 }
 
 .quiz {
