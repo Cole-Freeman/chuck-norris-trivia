@@ -583,6 +583,9 @@ form {
   .button-div {
     padding: 3px;
   }
+  .trivia {
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {
