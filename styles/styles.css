@@ -510,20 +510,21 @@ form {
     width: 100%;
   }
   main {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    display: -ms-grid;
+    display: grid;
+    grid-row: 1fr 1fr;
+    grid-gap: 1rem;
   }
   .spinner, .trivia {
     width: 100%;
   }
+  .spinner {
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+  }
   .trivia {
     padding-top: 10px;
-    height: 35vh;
+    min-height: 30vh;
   }
   button {
     height: 50vh;
@@ -558,6 +559,9 @@ form {
     font-size: 1.5rem;
   }
   main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -607,7 +611,7 @@ form {
   button {
     height: 20%;
     width: 70%;
-    padding-top: 20px;
+    margin-top: 20px;
   }
   input[type=submit] {
     font-size: 1rem;
