@@ -10,13 +10,13 @@
 </head>
 <body>
     <header>
-        <!-- <div class="wrapper"> -->
+        <div class="wrapper header-flex">
             <h1>Spin-Q-Wiz</h1>
             <div class="counters">
                 <p class="border"><span class="score">0</span> Your Score</p>
                 <p class="border"><span class="turns">3</span> Turns Left</p>
             </div>
-        <!-- </div> -->
+        </div>
     </header>
     <main class="wrapper">
         <section class="spinner">
@@ -25,12 +25,22 @@
                 <button type="submit" id="button"><img src="assets/wheel.svg" class="spin-svg" id="spinner" alt="Game spinner."></button>
             </div>
         </section>
+
 ​
         <section class="trivia">
-            <form class="quiz"  action="#">
-​               <p>Click the Spinner to Start the Game!</p>
-                
-            </form>
+            <div class="trivia-center">
+                <form class="quiz"  action="#">
+    ​               <p>
+                   <span class="instructions">- Click the wheel to to get a question</span>
+    
+                    <span class="instructions">- You get an extra turn for every correct answer!</span>
+    
+                    <span class="instructions">- You get 5 points for every correct answer!</span>
+    
+                    <span class="instructions">- You get free ice cream if you hit 100 points (not true)</span></p>
+                    
+                </form>
+            </div>
             <form action="#" class="verdict"></form>
         </section>
     </main>

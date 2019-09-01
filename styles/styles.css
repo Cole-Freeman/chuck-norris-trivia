@@ -209,9 +209,10 @@ h1 {
   text-transform: uppercase;
   font-size: 1.9rem;
   font-family: 'Major Mono Display', monospace;
-  margin: auto;
+  margin: 0;
   width: 50%;
   text-align: center;
+  color: #E85A4f;
 }
 
 h2 {
@@ -265,7 +266,7 @@ input[type=radio] + label::before {
 }
 
 input[type=radio]:checked + label::before {
-  background-color: #8E8D8A;
+  background-color: #555555;
 }
 
 input[type=radio] + label {
@@ -275,6 +276,7 @@ input[type=radio] + label {
 input[type=submit] {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.8rem;
+  color: #555555;
   display: block;
   margin: auto;
   border: none;
@@ -288,12 +290,12 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background: #8E8D8A;
+  background: #555555;
   color: white;
 }
 
 input[type=submit]:focus {
-  background: #8E8D8A;
+  background: #555555;
   color: white;
 }
 
@@ -314,7 +316,7 @@ label {
 }
 
 .spin-svg:hover {
-  border: 2px solid #d68f87;
+  border: 2px solid #D68F87;
   border-radius: 50%;
   -webkit-animation: glow 0.3s linear infinite alternate;
           animation: glow 0.3s linear infinite alternate;
@@ -341,6 +343,18 @@ button:focus {
   outline: none;
 }
 
+.instructions {
+  display: block;
+  font-size: 0.7rem;
+  text-align: left;
+  padding-left: 50px;
+  color: #555555;
+}
+
+.quiz {
+  color: #555555;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -359,7 +373,7 @@ img {
           box-sizing: initial;
 }
 
-header {
+.header-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -380,6 +394,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #555555;
 }
 
 .counters p {
@@ -387,11 +402,18 @@ header {
 }
 
 .turns, .score {
-  padding-right: 20px;
+  padding: 0 20px;
+  border: 2px solid #D68F87;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .spinner {
   width: 50%;
+}
+
+.start {
+  text-align: center;
 }
 
 .trivia {
@@ -400,9 +422,7 @@ header {
 }
 
 .border {
-  border: 2px solid #E85A4f;
-  border-radius: 5px;
-  padding: 10px 25px 10px;
+  padding: 10px 0 10px 25px;
 }
 
 form {
@@ -432,7 +452,7 @@ form {
 }
 
 .swal-button:not([disabled]):hover {
-  background: #8E8D8A;
+  background: #555555;
 }
 
 .swal-button-container {
