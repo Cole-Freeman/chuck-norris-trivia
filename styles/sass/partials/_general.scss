@@ -1,33 +1,25 @@
+
+// set colour variables
 $background: #E4E3E1;
 $accentred: #E85A4f;
 $lightred: #D68F87;
 $darkgrey: #555555;
 
-.visually-hidden:not(:focus):not(:active) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
+// set wrapper
 .wrapper {
     width: 90%;
     margin: 0 auto;
 }
-// time to style!
+// general html settings
 html {
     font-size: calc(2vw + 10px);
     line-height: 1.5;
     margin: 0;
     background: $background;
 }
+
+// main logo stylezzz
 h1 {
-    // font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     font-size: 1.9rem;
     font-family: 'Major Mono Display', monospace;
@@ -36,18 +28,24 @@ h1 {
     text-align: center;
     color: $accentred;
 }
+// quiz header stylez
 h2 {
     font-family: 'Major Mono Display', monospace;
     font-size: 1rem;
     margin: 0;
     
 }
+
+// quiz question stylez
 p {
-    // font-family: 'Red Hat Text', sans-serif;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.9rem;
     margin-top: 5px;
 }
+
+
+// style landing page intruction paragraph
+=======
 .score, .turns {
     font-family: 'Share Tech Mono', monospace;
     font-size: 1rem;
@@ -156,6 +154,7 @@ label {
     // color: lime; 
 } 
 
+
 .instructions {
     white-space: pre-line;
     text-align: left;
@@ -163,6 +162,3 @@ label {
     margin: 0 auto;
 }
 
-.quiz {
-    color: $darkgrey;
-}

@@ -179,20 +179,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-.visually-hidden:not(:focus):not(:active) {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .wrapper {
   width: 90%;
   margin: 0 auto;
@@ -227,9 +213,156 @@ p {
   margin-top: 5px;
 }
 
+.instructions {
+  display: block;
+  font-size: 0.7rem;
+  text-align: left;
+  width: 70%;
+  margin: 0 auto;
+  color: #555555;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.counters {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #555555;
+}
+
+.counters p {
+  margin: 0;
+}
+
+.turns, .score {
+  padding: 0 20px;
+  border: 2px solid #D68F87;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.score-count, .spin-count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 20px;
+}
+
+.score-count p, .spin-count p {
+  font-size: 0.8rem;
+}
+
 .score, .turns {
   font-family: 'Share Tech Mono', monospace;
   font-size: 1rem;
+}
+
+.rotation {
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
+
+.spin-svg:hover {
+  border: 2px solid #D68F87;
+  border-radius: 50%;
+  -webkit-animation: glow 0.3s linear infinite alternate;
+          animation: glow 0.3s linear infinite alternate;
+}
+
+.spin-svg:focus {
+  border-radius: 50%;
+}
+
+@-webkit-keyframes glow {
+  to {
+    border: 5px solid #E85A4f;
+  }
+}
+
+@keyframes glow {
+  to {
+    border: 5px solid #E85A4f;
+  }
+}
+
+.button:focus,
+.spin-svg:focus {
+  outline: none;
+}
+
+.button:focus > .spin-svg:focus {
+  -webkit-box-shadow: 0 0 2px 2px #51a7e8;
+          box-shadow: 0 0 2px 2px #51a7e8;
+}
+
+
+button {
+  height: 80vh;
+  width: 80%;
+  background: 0;
+  border: none;
+  
+.instructions {
+  white-space: pre-line;
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.spinner {
+  width: 50%;
+}
+
+.start {
+  text-align: center;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 form input[type=radio] {
@@ -299,131 +432,8 @@ label {
   font-family: 'Share Tech Mono', monospace;
 }
 
-.rotation {
-  overflow: hidden;
-  -webkit-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-}
-
-.spin-svg:hover {
-  border: 2px solid #D68F87;
-  border-radius: 50%;
-  -webkit-animation: glow 0.3s linear infinite alternate;
-          animation: glow 0.3s linear infinite alternate;
-}
-
-.spin-svg:focus {
-  border-radius: 50%;
-}
-
-@-webkit-keyframes glow {
-  to {
-    border: 5px solid #E85A4f;
-  }
-}
-
-@keyframes glow {
-  to {
-    border: 5px solid #E85A4f;
-  }
-}
-
-.button:focus,
-.spin-svg:focus {
-  outline: none;
-}
-
-.button:focus > .spin-svg:focus {
-  -webkit-box-shadow: 0 0 2px 2px #51a7e8;
-          box-shadow: 0 0 2px 2px #51a7e8;
-}
-
-.instructions {
-  white-space: pre-line;
-  text-align: left;
-  width: 90%;
-  margin: 0 auto;
-}
-
 .quiz {
   color: #555555;
-}
-
-main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-button {
-  height: 80vh;
-  width: 80%;
-  background: 0;
-  border: none;
-}
-
-.header-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-.counters {
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0 20px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #555555;
-}
-
-.counters p {
-  margin: 0;
-}
-
-.turns, .score {
-  padding: 0 20px;
-  border: 2px solid #D68F87;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.score-count, .spin-count {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-top: 20px;
-}
-
-.score-count p, .spin-count p {
-  font-size: 0.8rem;
-}
-
-.spinner {
-  width: 50%;
-}
-
-.start {
-  text-align: center;
 }
 
 .trivia {
@@ -438,11 +448,6 @@ form {
 .button-div {
   padding-bottom: 20px;
   margin: auto;
-}
-
-.verdict p {
-  padding-top: 20px;
-  font-size: 0.8rem;
 }
 
 .swal-modal {
