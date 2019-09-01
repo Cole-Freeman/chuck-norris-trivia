@@ -7,10 +7,14 @@ button {
     width: 80%;
     background: 0;
     border: none;
+    // position: fixed;
+    // box-sizing: initial;
+    // z-index: 999;
+    
 }
-img {
-    box-sizing: initial;
-}
+// img#spinner.spin-svg {
+//     box-sizing: initial;
+// }
 
 // flex header
 .header-flex {
@@ -46,6 +50,8 @@ img {
 }
 .spinner {
     width: 50%;
+    // z-index: 999;
+    // position: fixed;
 }
 
 // center wheel
@@ -95,3 +101,4 @@ form {
 .swal-footer {
     text-align: center;
 }
+
