@@ -1,3 +1,5 @@
+
+// Ajax call to retrieve data from API
 const spinApp = {};
 spinApp.singleAjaxCall = function(categoryId){
    return $.ajax({
@@ -64,9 +66,6 @@ spinApp.spinnerClick = function (){
                 $('.turns').text(Number($(".turns").text()) - 1);
                 answerObjectSave = answerObject;
             })
-        } else {
-            // switch this to sweet alert
-            if(!alert('Game Over! Play again?')){window.location.reload();}
         }
         $(".verdict").html(``)
         // added clear verdict html upon spinner spinz
@@ -100,6 +99,17 @@ spinApp.submitButton = function () {
             swal(`Select an answer!`);
             
             
+        }
+
+
+
+        const gameOver = $(".turns").text();
+
+        if (gameOver == 0) {
+
+
+            swal({title: "Wrong!", text: "Play Again?", type: "success"}).then(function(){location.reload();});
+
         }
     });
 }
