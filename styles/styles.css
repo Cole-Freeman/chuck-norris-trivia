@@ -584,6 +584,9 @@ form {
   .trivia {
     padding: 0;
   }
+  .instructions {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 480px) {
