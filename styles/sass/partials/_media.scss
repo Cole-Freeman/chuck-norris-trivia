@@ -25,8 +25,9 @@
     }
 
     main {
-        flex-direction: column-reverse;
-        justify-content: space-between;
+        display: grid;
+        grid-row: 1fr 1fr;
+        grid-gap: 1rem;
     }
 
     .spinner, .trivia {
@@ -34,9 +35,13 @@
         
     }
 
+    .spinner {
+        grid-row-start: 2;
+    }
+
     .trivia {
         padding-top: 10px;
-        height: 35vh;
+        min-height: 30vh;
     }
 
     button {
@@ -74,6 +79,7 @@
         font-size: 1.5rem;
     }
     main {
+        display: flex;
         flex-direction: row;
     }
 
@@ -132,7 +138,7 @@
     button {
         height: 20%;
         width: 70%;
-        padding-top: 20px;
+        margin-top: 20px;
     }
 
     input[type=submit] {
