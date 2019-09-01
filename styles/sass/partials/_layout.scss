@@ -11,7 +11,9 @@ button {
 img {
     box-sizing: initial;
 }
-header {
+
+// flex header
+.header-flex {
     display: flex;
     flex-direction: row-reverse;
 }
@@ -21,24 +23,32 @@ header {
     padding: 0 20px;
     justify-content: space-around;
     align-items: center;
+    color: $darkgrey;
     p {
         margin: 0;
     }
 }
 .turns, .score {
-    padding-right: 20px;
+    padding: 0 20px;
+    border: 2px solid $lightred;
+    border-radius: 5px;
+    text-align: center;
 }
 .spinner {
     width: 50%;
+}
+
+// center wheel
+
+.start {
+    text-align: center;
 }
 .trivia {
     width: 50%;
     padding-top: 50px;
 }
 .border {
-    border: 2px solid $accentred;
-    border-radius: 5px;
-    padding: 10px 25px 10px;
+    padding: 10px 0 10px 25px;;
 }
 form {
     text-align: center;
@@ -51,6 +61,8 @@ form {
     padding-top: 20px;
     font-size: 0.8rem
 }
+
+// Sweet Alerts Pop ups
 .swal-modal{
     height: 30%;
 }

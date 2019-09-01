@@ -32,9 +32,10 @@ h1 {
     text-transform: uppercase;
     font-size: 1.9rem;
     font-family: 'Major Mono Display', monospace;
-    margin: auto;
+    margin: 0;
     width: 50%;
     text-align: center;
+    color: $accentred;
 }
 h2 {
     font-family: 'Major Mono Display', monospace;
@@ -51,6 +52,7 @@ p {
 .score, .turns {
     font-family: 'Share Tech Mono', monospace;
     font-size: 1rem;
+    
 }
 form input[type=radio] {
     position: absolute;
@@ -121,9 +123,7 @@ label {
     -webkit-transform: rotate(360deg);
 }
 
-// .spin-svg {
-//     z-index: 999;
-// }
+
 .spin-svg:hover {
     border: 2px solid $lightred;
     border-radius: 50%;
@@ -148,3 +148,17 @@ label {
 //     outline: 2px solid #7AACFE !important; /* for non-webkit browsers */
 //     outline: 5px auto -webkit-focus-ring-color !important;
 //   }
+
+.instructions {
+    display: block;
+    font-size: 0.7rem;
+    text-align: left;
+    padding-left: 50px;
+    color: $darkgrey;
+
+
+}
+
+.quiz {
+    color: $darkgrey;
+}
