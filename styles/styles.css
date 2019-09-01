@@ -354,6 +354,11 @@ button {
   border: none;
 }
 
+img {
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;

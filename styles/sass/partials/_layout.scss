@@ -8,6 +8,9 @@ button {
     background: 0;
     border: none;
 }
+img {
+    box-sizing: initial;
+}
 header {
     display: flex;
     flex-direction: row-reverse;
