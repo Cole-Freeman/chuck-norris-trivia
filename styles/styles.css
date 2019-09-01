@@ -409,6 +409,21 @@ img {
   text-align: center;
 }
 
+.score-count, .spin-count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 20px;
+}
+
+.score-count p, .spin-count p {
+  font-size: 0.8rem;
+}
+
 .spinner {
   width: 50%;
 }
@@ -420,10 +435,6 @@ img {
 .trivia {
   width: 50%;
   padding-top: 50px;
-}
-
-.border {
-  padding: 10px 0 10px 25px;
 }
 
 form {
@@ -498,7 +509,7 @@ form {
   }
   .trivia {
     padding-top: 10px;
-    height: 30vh;
+    height: 35vh;
   }
   button {
     height: 50vh;
