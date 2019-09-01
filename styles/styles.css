@@ -513,14 +513,14 @@ form {
     padding-top: 10px;
   }
   input[type=submit] {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
   input[type=radio] + label::before {
-    width: 1rem;
-    height: 1rem;
+    width: 1.2rem;
+    height: 1.2rem;
   }
   input[type=radio] + label {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 }
 
