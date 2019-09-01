@@ -556,7 +556,7 @@ form {
     padding-top: 0px;
   }
   button {
-    width: 80%;
+    width: 90%;
     height: 60%;
   }
   input[type=submit] {
@@ -585,7 +585,7 @@ form {
     padding: 0;
   }
   .instructions {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 
