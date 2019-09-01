@@ -514,6 +514,9 @@ form {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .spinner, .trivia {
     width: 100%;
@@ -567,7 +570,7 @@ form {
     padding-top: 0px;
   }
   button {
-    width: 90%;
+    width: 70%;
     height: 60%;
   }
   input[type=submit] {
@@ -603,7 +606,7 @@ form {
 @media (max-width: 480px) {
   button {
     height: 20%;
-    width: 300px;
+    width: 70%;
     padding-top: 20px;
   }
   input[type=submit] {
