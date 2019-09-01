@@ -278,7 +278,7 @@ input[type=submit] {
   font-size: 0.8rem;
   color: #555555;
   display: block;
-  margin: auto;
+  margin: 0 auto 20px;
   border: none;
   padding: 10px;
   background: none;
