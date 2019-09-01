@@ -193,9 +193,413 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+html {
+  font-size: calc(2vw + 10px);
+  line-height: 1.5;
+  margin: 0;
+  background: #E4E3E1;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  font-family: 'Major Mono Display', monospace;
+  margin: 0;
+  width: 50%;
+  text-align: center;
+  color: #E85A4f;
+}
+
+h2 {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 1rem;
+  margin: 0;
+}
+
+p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.score, .turns {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
+}
+
+form input[type=radio] {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio] + label {
+  font-size: 0.8rem;
+  padding: 20px 10px 10px 0;
+  border: 3px solid transparent;
+}
+
+input[type=radio] + label:hover {
+  border: 3px solid #E85A4f;
+  border-radius: 5px;
+}
+
+input[type=radio] + label:focus {
+  border: 3px solid #E85A4f;
+  border-radius: 5px;
+}
+
+input[type=radio] + label::before {
+  content: '';
+  display: inline-block;
+  border: 5px solid #fff;
+  margin: 0 0.5em;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 4px #E85A4f;
+          box-shadow: 4px 4px #E85A4f;
+}
+
+input[type=radio]:checked + label::before {
+  background-color: #555555;
+}
+
+input[type=submit] {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  color: #555555;
+  display: block;
+  margin: 0 auto 20px;
+  border: none;
+  padding: 10px;
+  background: none;
+  border: 2px solid #E85A4f;
+  border-radius: 5px;
+  -webkit-box-shadow: 8px 8px #E85A4f;
+          box-shadow: 8px 8px #E85A4f;
+  text-align: center;
+}
+
+input[type=submit]:hover {
+  background: #555555;
+  color: white;
+}
+
+input[type=submit]:focus {
+  background: #555555;
+  color: white;
+}
+
+label {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.rotation {
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
+
+.spin-svg:hover {
+  border: 2px solid #D68F87;
+  border-radius: 50%;
+  -webkit-animation: glow 0.3s linear infinite alternate;
+          animation: glow 0.3s linear infinite alternate;
+}
+
+.spin-svg:focus {
+  border-radius: 50%;
+}
+
+@-webkit-keyframes glow {
+  to {
+    border: 5px solid #E85A4f;
+  }
+}
+
+@keyframes glow {
+  to {
+    border: 5px solid #E85A4f;
+  }
+}
+
+.button:focus,
+.spin-svg:focus {
+  outline: none;
+}
+
+.button:focus > .spin-svg:focus {
+  -webkit-box-shadow: 0 0 2px 2px #51a7e8;
+          box-shadow: 0 0 2px 2px #51a7e8;
+}
+
+.instructions {
+  display: block;
+  font-size: 0.7rem;
+  text-align: left;
+  width: 70%;
+  margin: 0 auto;
+  color: #555555;
+}
+
+.quiz {
+  color: #555555;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 button {
-  height: 45vh;
-  width: 45%;
+  height: 80vh;
+  width: 80%;
   background: 0;
   border: none;
+}
+
+.header-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.counters {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 20px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #555555;
+}
+
+.counters p {
+  margin: 0;
+}
+
+.turns, .score {
+  padding: 0 20px;
+  border: 2px solid #D68F87;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.score-count, .spin-count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 20px;
+}
+
+.score-count p, .spin-count p {
+  font-size: 0.8rem;
+}
+
+.spinner {
+  width: 50%;
+}
+
+.start {
+  text-align: center;
+}
+
+.trivia {
+  width: 50%;
+  padding-top: 50px;
+}
+
+form {
+  text-align: center;
+}
+
+.button-div {
+  padding-bottom: 20px;
+  margin: auto;
+}
+
+.verdict p {
+  padding-top: 20px;
+  font-size: 0.8rem;
+}
+
+.swal-modal {
+  height: 30%;
+}
+
+.swal-button {
+  height: 30%;
+  width: 70%;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  background: #E85A4f;
+}
+
+.swal-button:not([disabled]):hover {
+  background: #555555;
+}
+
+.swal-button-container {
+  width: 95%;
+}
+
+.swal-text {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.swal-footer {
+  text-align: center;
+}
+
+@media (min-width: 1350px) {
+  button {
+    width: 480px;
+  }
+}
+
+@media (max-width: 1050px) {
+  button {
+    height: 70vh;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .counters, h1 {
+    width: 100%;
+  }
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .spinner, .trivia {
+    width: 100%;
+  }
+  .trivia {
+    padding-top: 10px;
+    height: 35vh;
+  }
+  button {
+    height: 50vh;
+    width: 70%;
+    padding-top: 10px;
+  }
+  input[type=submit] {
+    font-size: 1.5rem;
+  }
+  input[type=radio] + label::before {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  input[type=radio] + label {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 740px) and (max-height: 420px) {
+  h1 {
+    color: dodgerblue;
+  }
+  .header-flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .counters {
+    width: 50%;
+  }
+  h1 {
+    width: 50%;
+    padding-top: 10px;
+    font-size: 1.5rem;
+  }
+  main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .spinner, .trivia {
+    width: 50%;
+  }
+  .trivia {
+    padding-top: 0px;
+  }
+  button {
+    padding-top: 30px;
+    width: 90%;
+    height: 60%;
+  }
+  input[type=submit] {
+    font-size: 0.8rem;
+  }
+  input[type=radio] + label::before {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  input[type=radio] + label {
+    font-size: 0.8rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .swal-modal {
+    height: 50%;
+  }
+  .button-div {
+    padding: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    height: 20%;
+    width: 100%;
+    padding-top: 20px;
+  }
+  input[type=submit] {
+    font-size: 1rem;
+  }
+  input[type=radio] + label::before {
+    width: 1rem;
+    height: 1rem;
+  }
+  input[type=radio] + label {
+    font-size: 1rem;
+  }
 }

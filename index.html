@@ -5,29 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Share+Tech+Mono&display=swap" rel="stylesheet"> 
     <title></title>
 </head>
 <body>
     <header>
-        <h1>Game Name</h1>
+        <div class="wrapper header-flex">
+            <h1>Spin-Q-Wiz</h1>
+            <div class="counters">
+                <div class="score-count">
+                	<p class="score">0</p>
+                	<p> Your Score</p>
+                </div>
+                <div class="spin-count">
+                    <p class="turns">3</p>
+                    <p> Spins Left</p>
+                </div>
+            </div>
+        </div>
     </header>
-    <main>
+    <main class="wrapper">
         <section class="spinner">
             <div class="start">
                 <label for="button" class="visually-hidden">Click me to start the game!</label>
-                <button type="submit" id="button"><img src="assets/wheel.svg" alt="Game spinner."></button>
+                <button type="submit" id="button"><img src="assets/wheel.svg" class="spin-svg" tabindex="-1" id="spinner" alt="Game spinner."></button>
             </div>
-            <p><span class="score">0</span> Your Score</p>
-            <p><span class="turns">3</span> Turns Left</p>
         </section>
 
-        
 
+​
         <section class="trivia">
-            <form class="quiz"  action="#">
+            
+                <form class="quiz"  action="#">
+    ​               <p><span class="instructions">- Click the wheel to to get a question</span>
+    
+                    <span class="instructions">- You get an extra turn for every correct answer!</span>
+    
+                    <span class="instructions">- You get 5 points for every correct answer!</span>
+    
+                    <span class="instructions">- You get free ice cream if you hit 100 points (not true)</span></p>
+                </form>
 
-                
-            </form>
             <form action="#" class="verdict"></form>
         </section>
     </main>

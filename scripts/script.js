@@ -1,6 +1,6 @@
-  
-const spinApp = {};
 
+// Ajax call to retrieve data from API
+const spinApp = {};
 spinApp.singleAjaxCall = function(categoryId){
    return $.ajax({
         url: "https://opentdb.com/api.php",
@@ -16,7 +16,6 @@ spinApp.singleAjaxCall = function(categoryId){
        return result.results[0];
     })
 }
-
 spinApp.cat = [ 
     {category: "animals", id: 27},
     {category: "celebs", id: 22},
@@ -27,59 +26,53 @@ spinApp.cat = [
     {category: "tv", id: 14},
     {category: "film", id: 11},
     ];
-
 // Randomize function
 spinApp.randomCategory = function (array) {
     const randomNumber = Math.floor(Math.random() * this.cat.length);
     return array[randomNumber];
 };
-
 let answerObjectSave = "";
-
 spinApp.spinnerClick = function (){
-
     $("button").on("click", function () {
-
         const turnsLeft = $(".turns").text();
-
         $(".quiz").html(``);
-
         if (turnsLeft > 0) {
-
             const selectedCat = spinApp.randomCategory(spinApp.cat);
             const success = spinApp.singleAjaxCall(selectedCat.id);
-        
+
+            $("#spinner").addClass("rotation");
+            setTimeout(function () {
+                $("#spinner").removeClass('rotation');
+            }, 1500);
+
+            $('button').attr('disabled', 'disabled');
+            
             $.when(success).then((answerObject) => {
                 
                 $(".quiz").html(`<h2>${answerObject.category}</h2><p>${answerObject.question}</p>
                 <form action="#">
-                    <label for="true">True</label>
-                    <input type="radio" name="answers" id="true" value="True">
-                
-                    <label for="false">False</label>
-                    <input type="radio" name="answers" id="false" value="False">
+                    <div class ="button-div">
+                        <input type="radio" name="answers" id="true" value="True">
+                        <label for="true">True</label>
+                    
+                        <input type="radio" name="answers" id="false" value="False">
+                        <label for="false">False</label>
+                    </div>
                 
                     <input type="submit" class="submit" value="Submit!" id="submit-button">
                     <label for="submit-button" class="visually-hidden">Click to submit answer</label>
                 </form>`);
         
                 $('.turns').text(Number($(".turns").text()) - 1);
-
                 answerObjectSave = answerObject;
             })
-
-        } else {
-            // switch this to sweet alert
-            if(!alert('Game Over! Play again?')){window.location.reload();}
         }
-
         $(".verdict").html(``)
-
         // added clear verdict html upon spinner spinz
     
     });
 }
-
+// why wont this save on Sebastian's computer?
 spinApp.submitButton = function () {
     $("form").on("submit", function (event) {
         event.preventDefault();
@@ -87,25 +80,42 @@ spinApp.submitButton = function () {
         const userAnswer = $(`input[name=answers]:checked`).val();
         const ajaxAnswer = answerObjectSave.correct_answer;
         const incorrectAnswer = answerObjectSave.incorrect_answers;
-
+        
         if (ajaxAnswer === userAnswer) {
-            $(".verdict").html(`<p>That's right!  You get 5 points!</p>`)
+            swal(`That's right!  You get 5 points, and an extra Spin - you Q-Wiz! Spin Again`);
             $('.score').text(Number($(".score").text())+5);
+            $('.turns').text(Number($(".turns").text()) + 1);
+            $('input[type=radio]').attr('disabled', 'disabled');
+            $('input[type=submit]').attr('disabled', 'disabled');
+            $('button').removeAttr('disabled', 'disabled');
 
         } else if (incorrectAnswer == userAnswer) {
-            $(".verdict").html(`<p>Incorrect Answer</p>`)
+            swal(`Incorrect Answer, Spin Again`);
+            $('input[type=radio]').attr('disabled', 'disabled');
+            $('input[type=submit]').attr('disabled', 'disabled');
+            $('button').removeAttr('disabled', 'disabled');
             
         }  else {
-            $(".verdict").html(`<p>Select an answer!</p>`)
+            swal(`Select an answer!`);
+            
+            
         }
 
+
+
+        const gameOver = $(".turns").text();
+
+        if (gameOver == 0) {
+
+
+            swal({title: "Wrong!", text: "Play Again?", type: "success"}).then(function(){location.reload();});
+
+        }
     });
-
 }
-
 $(function(){
     
     spinApp.spinnerClick();
     spinApp.submitButton();
-
 });
+// test save

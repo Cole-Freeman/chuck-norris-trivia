@@ -1,0 +1,104 @@
+main {
+    // height: 90vh;
+    display: flex;
+}
+button {
+    height: 80vh;
+    width: 80%;
+    background: 0;
+    border: none;
+    // position: fixed;
+    // box-sizing: initial;
+    // z-index: 999;
+    
+}
+// img#spinner.spin-svg {
+//     box-sizing: initial;
+// }
+
+// flex header
+.header-flex {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.counters {
+    width: 50%;
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-around;
+    align-items: center;
+    color: $darkgrey;
+    p {
+        margin: 0;
+    }
+}
+.turns, .score {
+    padding: 0 20px;
+    border: 2px solid $lightred;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.score-count, .spin-count {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    
+    p {
+        font-size: 0.8rem;
+    }
+}
+.spinner {
+    width: 50%;
+    // z-index: 999;
+    // position: fixed;
+}
+
+// center wheel
+
+.start {
+    text-align: center;
+}
+.trivia {
+    width: 50%;
+    padding-top: 50px;
+}
+
+form {
+    text-align: center;
+}
+.button-div {
+    padding-bottom: 20px;
+    margin: auto;
+}
+.verdict p { 
+    padding-top: 20px;
+    font-size: 0.8rem
+}
+
+// Sweet Alerts Pop ups
+.swal-modal{
+    height: 30%;
+}
+.swal-button {
+    height: 30%;
+    width: 70%;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    background: $accentred;
+    &:not([disabled]):hover {
+        background: $darkgrey;
+    }
+}
+.swal-button-container {
+    width: 95%;
+}
+.swal-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    text-align: center;
+}
+.swal-footer {
+    text-align: center;
+}
+
