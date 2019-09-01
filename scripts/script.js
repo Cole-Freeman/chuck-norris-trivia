@@ -103,7 +103,7 @@ spinApp.submitButton = function () {
         
         // logic for correct answers
         if (ajaxAnswer === userAnswer) {
-            swal(`That's right!  You get 5 points, and an extra Spin - you Q-Wiz! Spin Again`);
+            swal(`Correct!  You get 5 points and an extra Spin.  Spin Again!`);
             // add 5 points to user score
             $('.score').text(Number($(".score").text())+5);
             // add 1 turn to user turns
@@ -115,7 +115,7 @@ spinApp.submitButton = function () {
 
             // logic for incorrect answers
         } else if (incorrectAnswer == userAnswer) {
-            swal(`Incorrect Answer, Spin Again`);
+            swal(`Wrong! Spin Again.`);
             // disable ability to spin
             $('input[type=radio]').attr('disabled', 'disabled');
             $('input[type=submit]').attr('disabled', 'disabled');
@@ -134,7 +134,7 @@ spinApp.submitButton = function () {
         if (gameOver == 0) {
 
             // play again button refreshes game on click
-            swal({title: "Wrong!", text: "Play Again?", type: "success"}).then(function(){location.reload();});
+            swal({title: "Wrong! Game Over", text: "Play Again?", type: "success"}).then(function(){location.reload();});
 
         }
     });
