@@ -591,7 +591,7 @@ form {
     font-size: 0.8rem;
   }
   p {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .swal-modal {
     height: 50%;
@@ -604,6 +604,10 @@ form {
   }
   .instructions {
     font-size: 0.6rem;
+  }
+  .rotation {
+    -webkit-transition-duration: 0.9s;
+            transition-duration: 0.9s;
   }
 }
 

@@ -114,7 +114,7 @@
         font-size: 0.8rem;
     }
     p {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 
     .swal-modal{
@@ -131,6 +131,11 @@
 
     .instructions {
         font-size: 0.6rem;
+    }
+
+    .rotation {
+        transition-duration: 0.9s;
+        
     }
 }
 
