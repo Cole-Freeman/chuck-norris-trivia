@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+
+    .header-flex {
+        flex-direction: column;
+    }
+
+    .counters, h1 {
+        width: 90%;
+    }
+
+    main {
+        flex-direction: column-reverse;
+    }
+
+    .spinner, .trivia {
+        width: 90%;
+        
+    }
+
+    .trivia {
+        padding-top: 10px;
+        height: 30vh;
+    }
+
+    button {
+        height: 50vh;
+        width: 50%;
+    }
+}
