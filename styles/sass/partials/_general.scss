@@ -1,33 +1,25 @@
+
+// set colour variables
 $background: #E4E3E1;
 $accentred: #E85A4f;
 $lightred: #D68F87;
 $darkgrey: #555555;
 
-.visually-hidden:not(:focus):not(:active) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
+// set wrapper
 .wrapper {
     width: 90%;
     margin: 0 auto;
 }
-// time to style!
+// general html settings
 html {
     font-size: calc(2vw + 10px);
     line-height: 1.5;
     margin: 0;
     background: $background;
 }
+
+// main logo stylezzz
 h1 {
-    // font-family: 'Share Tech Mono', monospace;
     text-transform: uppercase;
     font-size: 1.9rem;
     font-family: 'Major Mono Display', monospace;
@@ -36,128 +28,22 @@ h1 {
     text-align: center;
     color: $accentred;
 }
+// quiz header stylez
 h2 {
     font-family: 'Major Mono Display', monospace;
     font-size: 1rem;
     margin: 0;
     
 }
+
+// quiz question stylez
 p {
-    // font-family: 'Red Hat Text', sans-serif;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.9rem;
     margin-top: 5px;
 }
-.score, .turns {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 1rem;
-    
-}
-form input[type=radio] {
-    position: absolute;
-    left: -9999px;
-}
-input[type=radio]+label {
-    font-size: 0.8rem;
-    // margin: auto;
-    padding: 20px 10px 10px 0;
-    border: 3px solid transparent;
-    
-    &:hover {
-        border: 3px solid $accentred;
-        border-radius: 5px;
-    }
-    
-    &:focus {
-        border: 3px solid $accentred;
-        border-radius: 5px;
-    }
-}
-input[type=radio]+label::before {
-    content: '';
-    display: inline-block;
-    border: 5px solid #fff;
-    margin: 0 0.5em;
-    width: 0.8rem;
-    height: 0.8rem;
-    border-radius: 5px;
-    box-shadow: 4px 4px $accentred;
-}
-input[type=radio]:checked+label::before {
-    background-color: $darkgrey;
-}
 
-input[type=submit] {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.8rem;
-    color: $darkgrey;
-    display: block;
-    margin: 0 auto 20px;
-    border: none;
-    padding: 10px;
-    background: none;
-    border: 2px solid $accentred;
-    border-radius: 5px;
-    box-shadow: 8px 8px $accentred;
-    text-align: center;
-    &:hover {
-        background: $darkgrey;
-        color: white;
-        // padding-top: 10px;
-    }
-    &:focus {
-        background: $darkgrey;
-        color: white;
-    }
-}
-label {
-    font-family: 'Share Tech Mono', monospace;
-    // margin-bottom: 10px;
-}
-.rotation {
-    // -webkit-transform: scale(1.1) translate3d( 0, 0, 0) perspective(1px);
-    // -moz-transform: scale(1.1) translate3d( 0, 0, 0) perspective(1px);
-    //   -o-transform: scale(1.1) translate3d( 0, 0, 0) perspective(1px);
-    //  -ms-transform: scale(1.1) translate3d( 0, 0, 0) perspective(1px);
-    //      transform: scale(1.1) translate3d( 0, 0, 0) perspective(1px);
-// }
-    overflow: hidden;
-    transition-duration: 0.3s;
-    transition-property: transform;
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-}
-
-
-.spin-svg:hover {
-    border: 2px solid $lightred;
-    border-radius: 50%;
-    animation: glow 0.3s linear infinite alternate;
-}
-.spin-svg:focus {
-    border-radius: 50%;
-}
-@keyframes glow{
-    to {
-        border: 5px solid $accentred;
-    }
-  }
-
-// remove chrome focus state
-
-.button:focus,
-.spin-svg:focus {
-    outline: none;
-}
-
-// add chrome focus state on tab for accessibility
-.button:focus > .spin-svg:focus {
-    box-shadow: 0 0 2px 2px #51a7e8; 
-    // color: lime; 
-} 
-
-
-
+// style landing page intruction paragraph
 .instructions {
     display: block;
     font-size: 0.7rem;
@@ -165,10 +51,5 @@ label {
     width: 70%;
     margin: 0 auto;
     color: $darkgrey;
-
-
 }
 
-.quiz {
-    color: $darkgrey;
-}
