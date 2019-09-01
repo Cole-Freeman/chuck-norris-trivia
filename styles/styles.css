@@ -328,11 +328,19 @@ main {
           box-shadow: 0 0 2px 2px #51a7e8;
 }
 
+
 button {
   height: 80vh;
   width: 80%;
   background: 0;
   border: none;
+  
+.instructions {
+  white-space: pre-line;
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+
 }
 
 .spinner {
@@ -526,9 +534,6 @@ form {
 }
 
 @media (max-width: 740px) and (max-height: 420px) {
-  h1 {
-    color: dodgerblue;
-  }
   .header-flex {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -556,7 +561,6 @@ form {
     padding-top: 0px;
   }
   button {
-    padding-top: 30px;
     width: 90%;
     height: 60%;
   }
@@ -570,6 +574,9 @@ form {
   input[type=radio] + label {
     font-size: 0.8rem;
   }
+  h2 {
+    font-size: 0.8rem;
+  }
   p {
     font-size: 0.8rem;
   }
@@ -578,6 +585,12 @@ form {
   }
   .button-div {
     padding: 3px;
+  }
+  .trivia {
+    padding: 0;
+  }
+  .instructions {
+    font-size: 0.6rem;
   }
 }
 
