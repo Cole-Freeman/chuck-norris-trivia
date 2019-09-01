@@ -470,6 +470,13 @@ form {
   text-align: center;
 }
 
+@media (max-width: 1050px) {
+  button {
+    height: 70vh;
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .header-flex {
     -webkit-box-orient: vertical;
@@ -502,7 +509,7 @@ form {
 
 @media (max-width: 480px) {
   button {
-    height: 30vh;
+    height: 20%;
     width: 100%;
   }
 }
