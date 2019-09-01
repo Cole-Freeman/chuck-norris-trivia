@@ -347,7 +347,8 @@ button:focus {
   display: block;
   font-size: 0.7rem;
   text-align: left;
-  padding-left: 50px;
+  width: 70%;
+  margin: 0 auto;
   color: #555555;
 }
 
@@ -467,4 +468,41 @@ form {
 
 .swal-footer {
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .header-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .counters, h1 {
+    width: 100%;
+  }
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .spinner, .trivia {
+    width: 100%;
+  }
+  .trivia {
+    padding-top: 10px;
+    height: 30vh;
+  }
+  button {
+    height: 50vh;
+    width: 70%;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    height: 30vh;
+    width: 100%;
+  }
 }
