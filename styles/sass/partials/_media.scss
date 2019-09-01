@@ -59,10 +59,6 @@
 
 @media (max-width: 740px) and (max-height: 420px) {
     
-    h1 {
-        color: dodgerblue;
-    }
-
     .header-flex {
         flex-direction: row-reverse;
     }
@@ -89,7 +85,6 @@
     }
 
     button {
-        padding-top: 30px;
         width: 90%;
         height: 60%;
     }
@@ -107,6 +102,9 @@
         font-size: 0.8rem;
     }
 
+    h2 {
+        font-size: 0.8rem;
+    }
     p {
         font-size: 0.8rem;
     }
