@@ -347,7 +347,8 @@ button:focus {
   display: block;
   font-size: 0.7rem;
   text-align: left;
-  padding-left: 50px;
+  width: 70%;
+  margin: 0 auto;
   color: #555555;
 }
 
@@ -477,7 +478,7 @@ form {
             flex-direction: column;
   }
   .counters, h1 {
-    width: 90%;
+    width: 100%;
   }
   main {
     -webkit-box-orient: vertical;
@@ -486,7 +487,7 @@ form {
             flex-direction: column-reverse;
   }
   .spinner, .trivia {
-    width: 90%;
+    width: 100%;
   }
   .trivia {
     padding-top: 10px;
@@ -494,6 +495,14 @@ form {
   }
   button {
     height: 50vh;
-    width: 50%;
+    width: 70%;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    height: 30vh;
+    width: 100%;
   }
 }
