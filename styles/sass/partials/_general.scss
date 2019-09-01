@@ -1,8 +1,7 @@
-$background: #EAE7DC;
 $background: #E4E3E1;
 $accentred: #E85A4f;
-$lightred: rgb(214, 143, 135);
-$darkgrey: #8E8D8A;
+$lightred: #D68F87;
+$darkgrey: #555555;
 
 .visually-hidden:not(:focus):not(:active) {
     position: absolute;
@@ -92,6 +91,7 @@ input[type=radio]+label {
 input[type=submit] {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.8rem;
+    color: $darkgrey;
     display: block;
     margin: auto;
     border: none;

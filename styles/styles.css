@@ -266,7 +266,7 @@ input[type=radio] + label::before {
 }
 
 input[type=radio]:checked + label::before {
-  background-color: #8E8D8A;
+  background-color: #555555;
 }
 
 input[type=radio] + label {
@@ -276,6 +276,7 @@ input[type=radio] + label {
 input[type=submit] {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.8rem;
+  color: #555555;
   display: block;
   margin: auto;
   border: none;
@@ -289,12 +290,12 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background: #8E8D8A;
+  background: #555555;
   color: white;
 }
 
 input[type=submit]:focus {
-  background: #8E8D8A;
+  background: #555555;
   color: white;
 }
 
@@ -315,7 +316,7 @@ label {
 }
 
 .spin-svg:hover {
-  border: 2px solid #d68f87;
+  border: 2px solid #D68F87;
   border-radius: 50%;
   -webkit-animation: glow 0.3s linear infinite alternate;
           animation: glow 0.3s linear infinite alternate;
@@ -347,11 +348,11 @@ button:focus {
   font-size: 0.7rem;
   text-align: left;
   padding-left: 50px;
-  color: #8E8D8A;
+  color: #555555;
 }
 
 .quiz {
-  color: #8E8D8A;
+  color: #555555;
 }
 
 main {
@@ -393,7 +394,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #8E8D8A;
+  color: #555555;
 }
 
 .counters p {
@@ -402,7 +403,7 @@ img {
 
 .turns, .score {
   padding: 0 20px;
-  border: 2px solid #d68f87;
+  border: 2px solid #D68F87;
   border-radius: 5px;
   text-align: center;
 }
@@ -451,7 +452,7 @@ form {
 }
 
 .swal-button:not([disabled]):hover {
-  background: #8E8D8A;
+  background: #555555;
 }
 
 .swal-button-container {
