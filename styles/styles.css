@@ -269,16 +269,12 @@ input[type=radio]:checked + label::before {
   background-color: #555555;
 }
 
-input[type=radio] + label {
-  background: 3px solid #E85A4f;
-}
-
 input[type=submit] {
   font-family: 'Share Tech Mono', monospace;
   font-size: 0.8rem;
   color: #555555;
   display: block;
-  margin: auto;
+  margin: 0 auto 20px;
   border: none;
   padding: 10px;
   background: none;
@@ -352,7 +348,8 @@ label {
   display: block;
   font-size: 0.7rem;
   text-align: left;
-  padding-left: 50px;
+  width: 70%;
+  margin: 0 auto;
   color: #555555;
 }
 
@@ -408,6 +405,21 @@ button {
   text-align: center;
 }
 
+.score-count, .spin-count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 20px;
+}
+
+.score-count p, .spin-count p {
+  font-size: 0.8rem;
+}
+
 .spinner {
   width: 50%;
 }
@@ -419,10 +431,6 @@ button {
 .trivia {
   width: 50%;
   padding-top: 50px;
-}
-
-.border {
-  padding: 10px 0 10px 25px;
 }
 
 form {
@@ -467,4 +475,59 @@ form {
 
 .swal-footer {
   text-align: center;
+}
+
+@media (max-width: 1050px) {
+  button {
+    height: 70vh;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .counters, h1 {
+    width: 100%;
+  }
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .spinner, .trivia {
+    width: 100%;
+  }
+  .trivia {
+    padding-top: 10px;
+    height: 35vh;
+  }
+  button {
+    height: 50vh;
+    width: 70%;
+    padding-top: 10px;
+  }
+  input[type=submit] {
+    font-size: 1.5rem;
+  }
+  input[type=radio] + label::before {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  input[type=radio] + label {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    height: 20%;
+    width: 100%;
+    padding-top: 20px;
+  }
 }

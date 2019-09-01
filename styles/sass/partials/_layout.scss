@@ -38,6 +38,16 @@ button {
     border-radius: 5px;
     text-align: center;
 }
+
+.score-count, .spin-count {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    
+    p {
+        font-size: 0.8rem;
+    }
+}
 .spinner {
     width: 50%;
     // z-index: 999;
@@ -53,9 +63,7 @@ button {
     width: 50%;
     padding-top: 50px;
 }
-.border {
-    padding: 10px 0 10px 25px;;
-}
+
 form {
     text-align: center;
 }
