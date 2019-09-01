@@ -1,3 +1,11 @@
+
+// Remove bug - elements shake when wheel spins
+@media (min-width: 1350px) {
+    button {
+        width: 480px;
+    }
+}
+
 @media (max-width: 1050px) {
     button {
         height: 70vh;
