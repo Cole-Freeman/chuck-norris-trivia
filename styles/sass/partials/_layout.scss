@@ -1,15 +1,12 @@
-
 // flex on main content
 main {
     display: flex;
 }
-
 // flex on header
 .header-flex {
     display: flex;
     flex-direction: row-reverse;
 }
-
 // counters layout, flex
 .counters {
     width: 50%;
@@ -22,7 +19,6 @@ main {
         margin: 0;
     }
 }
-
 // individual counter layouts
 .turns, .score {
     padding: 0 20px;
@@ -30,7 +26,6 @@ main {
     border-radius: 5px;
     text-align: center;
 }
-
 // flex layout for counter container
 .score-count, .spin-count {
     display: flex;
@@ -41,16 +36,13 @@ main {
         font-size: 0.8rem;
     }
 }
-
 // score & turn keeper stylez
 .score, .turns {
     font-family: 'Share Tech Mono', monospace;
     font-size: 1rem;
     
 }
-
 // Spinner Stylezzzzzz
-
 // animation on spinner
 .rotation {
     overflow: hidden;
@@ -59,7 +51,6 @@ main {
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
 }
-
 // hover effect on spinner
 .spin-svg:hover {
     border: 2px solid $lightred;
@@ -74,18 +65,15 @@ main {
         border: 5px solid $accentred;
     }
   }
-
 // remove chrome focus state
 .button:focus,
 .spin-svg:focus {
     outline: none;
 }
-
 // add chrome focus state on tab for accessibility
 .button:focus > .spin-svg:focus {
     box-shadow: 0 0 2px 2px #51a7e8; 
 } 
-
 // button for spinner
 button {
     height: 80vh;
@@ -93,19 +81,15 @@ button {
     background: 0;
     border: none;    
 }
-
 // set spinner width
 .spinner {
     width: 50%;
 }
-
 // need to center spinner
 .start {
     text-align: center;
 }
-
 // quiz form stylezzzzz
-
 // get labels off the screen - accessbility reasons
 .visually-hidden:not(:focus):not(:active) {
     position: absolute;
@@ -119,13 +103,11 @@ button {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
-
 // remove default radio buttons from screen
 form input[type=radio] {
     position: absolute;
     left: -9999px;
 }
-
 // style radio buttons
 input[type=radio]+label {
     font-size: 0.8rem;
@@ -155,7 +137,6 @@ input[type=radio]+label::before {
 input[type=radio]:checked+label::before {
     background-color: $darkgrey;
 }
-
 input[type=submit] {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.8rem;
@@ -181,7 +162,6 @@ input[type=submit] {
 label {
     font-family: 'Share Tech Mono', monospace;
 }
-
 // quiz form font color
 .quiz {
     color: $darkgrey;
@@ -191,18 +171,15 @@ label {
     width: 50%;
     padding-top: 50px;
 }
-
 // center quiz form text
 form {
     text-align: center;
 }
-
 // div for injected buttons
 .button-div {
     padding-bottom: 20px;
     margin: auto;
 }
-
 // Sweet Alerts Pop up stylezzzzz
 .swal-modal{
     height: 30%;
@@ -228,4 +205,3 @@ form {
 .swal-footer {
     text-align: center;
 }
-

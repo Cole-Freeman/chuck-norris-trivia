@@ -1,4 +1,3 @@
-
 // Ajax call to retrieve data from API
 const spinApp = {};
 spinApp.singleAjaxCall = function(categoryId){
@@ -28,6 +27,7 @@ spinApp.cat = [
     {category: "tv", id: 14},
     {category: "film", id: 11},
     ];
+
 // Randomize function
 spinApp.randomCategory = function (array) {
     const randomNumber = Math.floor(Math.random() * this.cat.length);
@@ -36,13 +36,17 @@ spinApp.randomCategory = function (array) {
 
 // create empty variable - to save ajax call output globally
 let answerObjectSave = "";
+
 // on spinner click function
 spinApp.spinnerClick = function (){
     $("button").on("click", function () {
+
         // check how many turns are left, save to variable
         const turnsLeft = $(".turns").text();
+
         // inject empty html upon button click
         $(".quiz").html(``);
+
         // if user has more than 0 turns left
         if (turnsLeft > 0) {
 
@@ -124,7 +128,6 @@ spinApp.submitButton = function () {
             
         }
 
-
         // game over pop up logic
         const gameOver = $(".turns").text();
 
@@ -136,8 +139,8 @@ spinApp.submitButton = function () {
         }
     });
 }
+
 $(function(){
-    
     spinApp.spinnerClick();
     spinApp.submitButton();
 });

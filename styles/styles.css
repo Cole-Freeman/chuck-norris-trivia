@@ -214,12 +214,11 @@ p {
 }
 
 .instructions {
-  display: block;
-  font-size: 0.7rem;
+  white-space: pre-line;
+  font-size: 0.8rem;
   text-align: left;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
-  color: #555555;
 }
 
 main {
@@ -328,19 +327,11 @@ main {
           box-shadow: 0 0 2px 2px #51a7e8;
 }
 
-
 button {
   height: 80vh;
   width: 80%;
   background: 0;
   border: none;
-  
-.instructions {
-  white-space: pre-line;
-  text-align: left;
-  width: 90%;
-  margin: 0 auto;
-
 }
 
 .spinner {
