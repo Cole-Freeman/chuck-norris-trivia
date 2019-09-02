@@ -122,8 +122,12 @@
     }
 
     // Sweet Alerts 
-    .swal-modal{
-        height: 50%;
+    .swal-modal {
+        height: 25%;
+    }
+
+    .swal-title {
+        font-size: 1.2rem;
     }
 
     .button-div {
@@ -148,6 +152,7 @@
         transition-duration: 0.9s;
         
     }
+
 }
 
 // Phones
@@ -173,5 +178,17 @@
 
     input[type=radio]+label {
         font-size: 1rem;
+    }
+
+    .swal-modal {
+        height: 22%;
+    }
+
+    .swal-title {
+        font-size: 1rem;
+    }
+
+    .swal-footer {
+        margin-top: 0;
     }
 }

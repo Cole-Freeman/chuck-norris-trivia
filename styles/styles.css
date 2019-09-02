@@ -457,7 +457,7 @@ form {
 }
 
 .swal-modal {
-  height: 30%;
+  height: 27.5%;
 }
 
 .swal-button {
@@ -592,7 +592,10 @@ form {
     font-size: 0.8rem;
   }
   .swal-modal {
-    height: 50%;
+    height: 25%;
+  }
+  .swal-title {
+    font-size: 1.2rem;
   }
   .button-div {
     padding: 3px;
@@ -629,5 +632,14 @@ form {
   }
   input[type=radio] + label {
     font-size: 1rem;
+  }
+  .swal-modal {
+    height: 22%;
+  }
+  .swal-title {
+    font-size: 1rem;
+  }
+  .swal-footer {
+    margin-top: 0;
   }
 }
