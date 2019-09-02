@@ -1,20 +1,23 @@
 
 // Remove bug - elements shake when wheel spins
-@media (min-width: 1350px) {
+@media (min-width: 1300px) {
     button {
         width: 480px;
     }
 }
 
+// Tablet landscape - resize spinner "button"
 @media (max-width: 1050px) {
     button {
         height: 70vh;
         width: 100%;
     }
 }
+// Tablet portrait
+// For responsive design we chose to put the wheel at the bottom for so all clickable elements where in reach. This also means that the text will always be on screen and easy to read.
+@media (max-width: 868px) {
 
-@media (max-width: 768px) {
-
+    // Header
     .header-flex {
         flex-direction: column;
     }
@@ -23,8 +26,12 @@
         width: 100%;
     }
 
+    // Main content
+    // Switched to grid to preserve gap between submit and spinner buttons.
     main {
-        flex-direction: column-reverse;
+        display: grid;
+        grid-row: 1fr 1fr;
+        grid-gap: 10px;
     }
 
     .spinner, .trivia {
@@ -32,19 +39,24 @@
         
     }
 
-    .trivia {
-        padding-top: 10px;
-        height: 35vh;
+    .spinner {
+        grid-row-start: 2;
     }
 
+    .trivia {
+        padding-top: 10px;
+        // This height is essential to prevent the wheel from jumping to the top of the page as new content loads. min-height was a compromise to prevent clash but reduce movement. A fixed height was difficult to manage with the differing length of questions coming from the API, it preserved the space but was either too much or the content would break out and buttons would clash. 
+        min-height: 25vh;
+    }
+
+    // element sizing
     button {
         height: 50vh;
-        width: 70%;
-        padding-top: 10px;
+        width: 65%;
     }
 
     input[type=submit] {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     input[type=radio]+label::before {
@@ -57,12 +69,9 @@
     }
 }
 
+// Landscape - Phones (back to desktop style layout)
 @media (max-width: 740px) and (max-height: 420px) {
-    
-    h1 {
-        color: dodgerblue;
-    }
-
+    // Header
     .header-flex {
         flex-direction: row-reverse;
     }
@@ -75,7 +84,9 @@
         padding-top: 10px;
         font-size: 1.5rem;
     }
+    // Content
     main {
+        display: flex;
         flex-direction: row;
     }
 
@@ -83,19 +94,22 @@
         width: 50%;
         
     }
-
     .trivia {
-        padding-top: 0px;
+        padding: 0;
     }
 
+    // Element sizing
     button {
-        padding-top: 30px;
-        width: 90%;
+        width: 70%;
         height: 60%;
+        padding-top: 20px;
     }
 
     input[type=submit] {
         font-size: 0.8rem;
+        margin-top: 5px;
+        padding: 5px;
+        box-shadow: 5px 5px $accentred;
     }
 
     input[type=radio]+label::before {
@@ -107,24 +121,46 @@
         font-size: 0.8rem;
     }
 
-    p {
-        font-size: 0.8rem;
-    }
-
-    .swal-modal{
-        height: 50%;
-    }
-
+    // Sweet Alerts 
     .button-div {
         padding: 3px;
     }
+
+    // Text 
+    h2 {
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 0.6rem;
+    }
+
+    .instructions {
+        font-size: 0.6rem;
+    }
+
+    // Animation
+    .rotation {
+        transition-duration: 0.9s;
+        
+    }
+
+    .swal-modal {
+        height: 55%;
+    }
+
 }
 
+// Phones
 @media (max-width: 480px) {
+
+    main {
+        grid-gap: 15px;
+    }
+    // Element sizing
     button {
         height: 20%;
-        width: 100%;
-        padding-top: 20px;
+        width: 70%;
     }
 
     input[type=submit] {
@@ -139,4 +175,6 @@
     input[type=radio]+label {
         font-size: 1rem;
     }
+
+    
 }
