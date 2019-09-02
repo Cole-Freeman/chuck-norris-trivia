@@ -486,7 +486,7 @@ form {
   text-align: center;
 }
 
-@media (min-width: 1350px) {
+@media (min-width: 1300px) {
   button {
     width: 480px;
   }
@@ -571,7 +571,7 @@ form {
     width: 50%;
   }
   .trivia {
-    padding-top: 0px;
+    padding: 0;
   }
   button {
     width: 70%;
@@ -587,20 +587,17 @@ form {
   input[type=radio] + label {
     font-size: 0.8rem;
   }
-  h2 {
-    font-size: 0.8rem;
-  }
-  p {
-    font-size: 0.6rem;
-  }
   .swal-modal {
     height: 50%;
   }
   .button-div {
     padding: 3px;
   }
-  .trivia {
-    padding: 0;
+  h2 {
+    font-size: 0.8rem;
+  }
+  p {
+    font-size: 0.6rem;
   }
   .instructions {
     font-size: 0.6rem;
