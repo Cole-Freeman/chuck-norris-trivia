@@ -15,7 +15,7 @@
 }
 // Tablet portrait
 // For responsive design we chose to put the wheel at the bottom for so all clickable elements where in reach. This also means that the text will always be on screen and easy to read.
-@media (max-width: 768px) {
+@media (max-width: 868px) {
 
     // Header
     .header-flex {
@@ -53,7 +53,6 @@
     button {
         height: 50vh;
         width: 70%;
-        padding-top: 10px;
     }
 
     input[type=submit] {

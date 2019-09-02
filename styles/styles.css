@@ -413,7 +413,7 @@ input[type=submit] {
   font-size: 0.8rem;
   color: #555555;
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto;
   border: none;
   padding: 10px;
   background: none;
@@ -499,7 +499,7 @@ form {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 868px) {
   .header-flex {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -529,7 +529,6 @@ form {
   button {
     height: 50vh;
     width: 70%;
-    padding-top: 10px;
   }
   input[type=submit] {
     font-size: 1.5rem;
