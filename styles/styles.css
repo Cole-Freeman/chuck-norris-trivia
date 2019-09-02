@@ -575,10 +575,13 @@ form {
   button {
     width: 70%;
     height: 60%;
-    padding-top: 10px;
+    padding-top: 20px;
   }
   input[type=submit] {
     font-size: 0.8rem;
+    padding: 5px;
+    -webkit-box-shadow: 5px 5px #E85A4f;
+            box-shadow: 5px 5px #E85A4f;
   }
   input[type=radio] + label::before {
     width: 0.8rem;
