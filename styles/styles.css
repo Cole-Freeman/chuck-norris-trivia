@@ -631,7 +631,7 @@ form {
     font-size: 1rem;
   }
   .swal-title:first-child {
-    margin-top: 10px;
+    margin-top: 20px;
   }
   .swal-footer {
     margin-top: 0;
