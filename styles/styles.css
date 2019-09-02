@@ -513,7 +513,7 @@ form {
     display: -ms-grid;
     display: grid;
     grid-row: 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 15px;
   }
   .spinner, .trivia {
     width: 100%;
