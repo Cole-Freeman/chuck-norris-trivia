@@ -579,6 +579,7 @@ form {
   }
   input[type=submit] {
     font-size: 0.8rem;
+    margin-top: 5px;
     padding: 5px;
     -webkit-box-shadow: 5px 5px #E85A4f;
             box-shadow: 5px 5px #E85A4f;
@@ -612,6 +613,9 @@ form {
 }
 
 @media (max-width: 480px) {
+  main {
+    grid-gap: 15px;
+  }
   button {
     height: 20%;
     width: 70%;

@@ -107,6 +107,7 @@
 
     input[type=submit] {
         font-size: 0.8rem;
+        margin-top: 5px;
         padding: 5px;
         box-shadow: 5px 5px $accentred;
     }
@@ -152,6 +153,9 @@
 // Phones
 @media (max-width: 480px) {
 
+    main {
+        grid-gap: 15px;
+    }
     // Element sizing
     button {
         height: 20%;
