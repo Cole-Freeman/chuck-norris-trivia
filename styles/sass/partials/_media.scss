@@ -46,7 +46,7 @@
     .trivia {
         padding-top: 10px;
         // This height is essential to prevent the wheel from jumping to the top of the page as new content loads. min-height was a compromise to prevent clash but reduce movement. A fixed height was difficult to manage with the differing length of questions coming from the API, it preserved the space but was either too much or the content would break out and buttons would clash. 
-        min-height: 30vh;
+        min-height: 25vh;
     }
 
     // element sizing
@@ -56,7 +56,7 @@
     }
 
     input[type=submit] {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     input[type=radio]+label::before {

@@ -524,14 +524,14 @@ form {
   }
   .trivia {
     padding-top: 10px;
-    min-height: 30vh;
+    min-height: 25vh;
   }
   button {
     height: 50vh;
     width: 70%;
   }
   input[type=submit] {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   input[type=radio] + label::before {
     width: 1.2rem;
